@@ -481,6 +481,37 @@ async function loadUSForecasts() {
 }
 
 loadUSForecasts();
+  async function loadFOMC() {
+  try {
+    const response = await fetch("us_data.json?t=" + Date.now());
+    if (!response.ok) throw new Error("Données indisponibles");
+
+    const data = await response.json();
+    const meeting = data.next_fomc;
+
+    const dates = document.getElementById("us-fomc-dates");
+    const decision = document.getElementById("us-fomc-decision");
+
+    if (meeting) {
+      dates.textContent =
+        "Du " + new Date(meeting.start + "T12:00:00").toLocaleDateString("fr-FR") +
+        " au " + new Date(meeting.end + "T12:00:00").toLocaleDateString("fr-FR");
+
+      decision.textContent = meeting.decision_expected
+        ? "Décision sur les taux attendue le " +
+          new Date(meeting.decision_date + "T12:00:00").toLocaleDateString("fr-FR")
+        : "Aucune décision sur les taux prévue pour cette réunion.";
+    } else {
+      dates.textContent = "Aucune réunion à venir trouvée.";
+      decision.textContent = "";
+    }
+  } catch (error) {
+    console.error("Erreur calendrier FOMC :", error);
+    document.getElementById("us-fomc-dates").textContent = "Indisponible";
+  }
+}
+
+loadFOMC();
 </script>
 </body>
 </html>
