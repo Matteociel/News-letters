@@ -198,16 +198,15 @@ def main():
         }
     }
 
-         try:
-            data["fed"] = fetch_fed_rate()
-            print("Fed Funds :", data["fed"])
+    try:
+        data["fed"] = fetch_fed_rate()
+        print("Fed Funds :", data["fed"])
 
-            data["next_fomc"] = fetch_next_fomc()
-            print("Prochaine réunion FOMC :", data["next_fomc"])
+        data["next_fomc"] = fetch_next_fomc()
+        print("Prochaine réunion FOMC :", data["next_fomc"])
 
-         except Exception as error:
-            print("Erreur Fed :", error)
-
+    except Exception as error:
+        print("Erreur Fed :", error)
     for name, code in INDICATORS.items():
         try:
             data["indicators"][name] = fetch_indicator(code)
