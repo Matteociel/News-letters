@@ -184,6 +184,7 @@ def main():
         "updated": datetime.now(timezone.utc).isoformat(),
         "source": "Banque mondiale et banques fédérales américaines",
         "fed": None,
+        "next_fomc": None,
         "indicators": {},
         "forecasts": {
             "inflation": None,
