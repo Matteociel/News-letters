@@ -1,4 +1,4 @@
-
+from html.parser import HTMLParser
 import json
 import urllib.request
 import urllib.error
@@ -27,6 +27,45 @@ FEEDS = [
 ]
 
 NAMESPACES = {
+    
+class MetaImageParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.image = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != "meta":
+            return
+
+        data = dict(attrs)
+        prop = data.get("property", "").lower()
+        name = data.get("name", "").lower()
+
+        if prop == "og:image" or name == "twitter:image":
+            content = data.get("content")
+            if content and content.startswith("http"):
+                self.image = content
+
+
+def get_article_image(url):
+    try:
+        request = urllib.request.Request(
+            url,
+            headers={"User-Agent": "Mozilla/5.0"}
+        )
+
+        with urllib.request.urlopen(request, timeout=8) as response:
+            html = response.read(500000).decode(
+                "utf-8", errors="ignore"
+            )
+
+        parser = MetaImageParser()
+        parser.feed(html)
+        return parser.image
+
+    except Exception:
+        return None
+
     "media": "http://search.yahoo.com/mrss/",
     "content": "http://purl.org/rss/1.0/modules/content/"
 }
@@ -135,7 +174,7 @@ def fetch_feed(feed):
                     "source": feed["source"],
                     "region": feed["region"],
                     "date": normalize_date(date),
-                    "image": get_image(item)
+                    "image": get_image(item) or get_article_image(link)
                 })
 
         print(f"{feed['source']}: {len(articles)} articles")
