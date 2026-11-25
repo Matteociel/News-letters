@@ -118,9 +118,9 @@ border-top:1px solid var(--line);font-size:11px}
 
  <div class="grid2">
   <div class="card">
-   <h2>Actualités importantes</h2>
-   <div class="item"><span class="pill">À CONNECTER</span><p class="muted small">Les dernières informations économiques apparaîtront ici.</p></div>
-   <div class="item"><span class="pill">À CONNECTER</span><p class="muted small">Les publications et annonces majeures seront classées par importance.</p></div>
+   <h2>Dernières actualités économiques</h2>
+  <div id="news-status" class="muted small">Chargement des actualités...</div>
+  <div id="news-list"></div>
   </div>
   <div class="card">
    <h2>Agenda économique</h2>
@@ -260,6 +260,62 @@ function renderAnalyses(){
  });
 }
 renderAnalyses();
+  
+async function loadNews() {
+  const status = document.getElementById("news-status");
+  const list = document.getElementById("news-list");
+
+  try {
+    const response = await fetch("news.json?t=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Actualités indisponibles");
+    }
+
+    const data = await response.json();
+
+    list.innerHTML = "";
+
+    if (!data.articles || data.articles.length === 0) {
+      status.textContent = "Aucune actualité disponible pour le moment.";
+      return;
+    }
+
+    status.textContent =
+      data.count + " publications · Mise à jour : " +
+      new Date(data.updated).toLocaleString("fr-FR");
+
+    data.articles.forEach(article => {
+      const item = document.createElement("div");
+      item.className = "item";
+
+      const title = document.createElement("a");
+      title.href = article.url;
+      title.target = "_blank";
+      title.rel = "noopener noreferrer";
+      title.textContent = article.title;
+      title.style.color = "#76aaff";
+      title.style.fontWeight = "bold";
+      title.style.textDecoration = "none";
+
+      const meta = document.createElement("p");
+      meta.className = "muted small";
+      meta.textContent =
+        article.source + " · " + article.region +
+        (article.date ? " · " + article.date : "");
+
+      item.append(title, meta);
+      list.appendChild(item);
+    });
+
+  } catch (error) {
+    status.textContent =
+      "Impossible de charger les actualités. Vérifie la prochaine mise à jour.";
+  }
+}
+
+loadNews();
+
 </script>
 </body>
 </html>
