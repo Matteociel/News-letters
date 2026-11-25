@@ -25,6 +25,9 @@ jobs:
       - name: Recuperer les actualites
         run: python fetch_news.py
 
+      - name: Recuperer les donnees economiques
+        run: python fetch_economic_data.py
+
       - name: Enregistrer les actualites
         run: |
           git config user.name "GEI Bot"
