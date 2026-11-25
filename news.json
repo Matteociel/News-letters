@@ -1,14 +1,30 @@
 {
-  "updated": "2026-11-25T19:59:23.193760+00:00",
+  "updated": "2026-11-25T20:11:54.752333+00:00",
   "count": 35,
   "articles": [
+    {
+      "title": "Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125b.htm",
+      "source": "Federal Reserve",
+      "region": "États-Unis",
+      "date": "2026-11-25T20:00:00+00:00",
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
+    },
+    {
+      "title": "Agencies announce dollar thresholds for smaller loan exemption from appraisal requirements for higher-priced mortgage loans",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125a.htm",
+      "source": "Federal Reserve",
+      "region": "États-Unis",
+      "date": "2026-11-25T20:00:00+00:00",
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
+    },
     {
       "title": "ECB and Sveriges Riksbank conclude agreement for Sweden to join T2",
       "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125_1~6333a90f3a.en.html",
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-25T18:30:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/shared/img/socialmedia/social-default.jpg?0ef1632c35edede913681bb76af694a4"
     },
     {
       "title": "Card payments edge past cash in shops; euro area consumers want both",
@@ -16,7 +32,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-25T11:00:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/shared/img/socialmedia/social-default.jpg?0ef1632c35edede913681bb76af694a4"
     },
     {
       "title": "Minutes of the Board's discount rate meetings on October 19 and October 28, 2026",
@@ -24,7 +40,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-24T19:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Boris Vujčić: Resilience in an age of shocks: lessons from central and eastern Europe",
@@ -32,7 +48,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-24T12:00:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/key/shared/img/socialmedia/social-default.jpg?0dbb2de262f4f1fcaeae410be132177a"
     },
     {
       "title": "Philip R. Lane: Climate change and monetary policy",
@@ -48,7 +64,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-23T11:00:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/shared/img/socialmedia/social-default.jpg?0ef1632c35edede913681bb76af694a4"
     },
     {
       "title": "Federal Reserve announces College Fed Challenge winners",
@@ -56,7 +72,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-20T21:15:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
@@ -64,7 +80,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-20T15:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Christine Lagarde: Acting in time",
@@ -72,7 +88,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-20T09:30:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/key/shared/img/socialmedia/social-default.jpg?0dbb2de262f4f1fcaeae410be132177a"
     },
     {
       "title": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
@@ -80,7 +96,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-19T16:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
@@ -88,7 +104,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-18T19:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Boris Vujčić: Financial Stability Review - November 2026",
@@ -104,7 +120,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-18T10:00:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/shared/img/socialmedia/social-default.jpg?0ef1632c35edede913681bb76af694a4"
     },
     {
       "title": "Philip R. Lane: The practice and science of monetary policy communication: the ECB experience",
@@ -120,7 +136,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-16T14:00:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/inter/shared/img/socialmedia/social-default.jpg?58a9573de993c82d3c9e0b84d422b52a"
     },
     {
       "title": "Boris Vujčić: Risks and resilience in the euro area financial system",
@@ -128,7 +144,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-16T09:30:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/key/shared/img/socialmedia/social-default.jpg?0dbb2de262f4f1fcaeae410be132177a"
     },
     {
       "title": "Agencies extend comment period for proposed third-party risk management guidance",
@@ -136,7 +152,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-13T21:15:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Isabel Schnabel: Made in Europe",
@@ -144,7 +160,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-13T08:20:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/key/shared/img/socialmedia/social-default.jpg?0dbb2de262f4f1fcaeae410be132177a"
     },
     {
       "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
@@ -152,7 +168,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-12T18:30:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
@@ -160,7 +176,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-12T17:45:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
@@ -168,7 +184,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-12T16:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
@@ -176,7 +192,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-10T17:45:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/key/shared/img/socialmedia/social-default.jpg?0dbb2de262f4f1fcaeae410be132177a"
     },
     {
       "title": "Piero Cipollone: Cash and the digital euro: two sides of the same coin",
@@ -184,7 +200,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-10T15:00:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/key/shared/img/socialmedia/social-default.jpg?0dbb2de262f4f1fcaeae410be132177a"
     },
     {
       "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
@@ -192,7 +208,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-09T21:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Christine Lagarde: Interview with Yomiuri Shimbun",
@@ -200,7 +216,7 @@
       "source": "Banque centrale européenne",
       "region": "Europe",
       "date": "2026-11-07T15:00:00+01:00",
-      "image": null
+      "image": "https://www.ecb.europa.eu/press/inter/shared/img/socialmedia/social-default.jpg?58a9573de993c82d3c9e0b84d422b52a"
     },
     {
       "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
@@ -208,7 +224,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-11-05T16:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
@@ -216,7 +232,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-10-29T20:30:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Federal Reserve issues FOMC statement",
@@ -224,7 +240,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-10-28T18:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
@@ -232,7 +248,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-10-16T15:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
@@ -240,7 +256,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-10-13T18:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Federal Reserve Board releases results of the 2025 Survey of Consumer Finances, which provides the public and policymakers with detailed insights into the economic condition of American families",
@@ -248,7 +264,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-10-09T14:00:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm’s failure to sufficiently detect and report certain suspicious activity related to money laundering",
@@ -256,7 +272,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-10-08T20:30:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     },
     {
       "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
@@ -264,23 +280,7 @@
       "source": "Federal Reserve",
       "region": "États-Unis",
       "date": "2026-10-07T18:00:00+00:00",
-      "image": null
-    },
-    {
-      "title": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261005a.htm",
-      "source": "Federal Reserve",
-      "region": "États-Unis",
-      "date": "2026-10-05T20:30:00+00:00",
-      "image": null
-    },
-    {
-      "title": "Federal Reserve Board announces approval of application by Fleur Capital Corporation",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261002a.htm",
-      "source": "Federal Reserve",
-      "region": "États-Unis",
-      "date": "2026-10-02T20:45:00+00:00",
-      "image": null
+      "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
     }
   ]
 }
