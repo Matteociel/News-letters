@@ -34,6 +34,7 @@ jobs:
         run: |
           git config user.name "GEI Bot"
           git config user.email "gei-bot@users.noreply.github.com"
-                      git add news.json us_data.json
+          git add news.json
+          if [ -f us_data.json ]; then git add us_data.json; fi
           git diff --cached --quiet || git commit -m "Actualisation des actualites GEI"
           git push
