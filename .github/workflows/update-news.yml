@@ -1,0 +1,34 @@
+
+name: GEI - Actualisation des actualités
+
+on:
+  schedule:
+    - cron: '0 6,17 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Recuperer les actualites
+        run: python fetch_news.py
+
+      - name: Enregistrer les actualites
+        run: |
+          git config user.name "GEI Bot"
+          git config user.email "gei-bot@users.noreply.github.com"
+          git add news.json
+          git diff --cached --quiet || git commit -m "Actualisation des actualites GEI"
+          git push
