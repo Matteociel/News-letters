@@ -36,7 +36,10 @@ def fetch_indicator(code):
     return None
 
 def fetch_fed_rate():
-    url = "https://markets.newyorkfed.org/api/rates/unsecured/effr/last/1.json"
+    url = (
+        "https://markets.newyorkfed.org/api/rates/"
+        "unsecured/effr/last/1.json"
+    )
     result = get_json(url)
     rates = result.get("refRates", [])
 
@@ -55,16 +58,16 @@ def fetch_fed_rate():
 def main():
     data = {
         "updated": datetime.now(timezone.utc).isoformat(),
-        "source": "Banque mondiale et Réserve fédérale de New York",
+        "source": "Banque mondiale et Federal Reserve Bank of New York",
+        "fed": None,
         "indicators": {}
     }
 
     try:
-        data["indicators"]["fed_rate"] = fetch_fed_rate()
-        print("Federal Reserve : OK")
+        data["fed"] = fetch_fed_rate()
+        print("Fed Funds :", data["fed"])
     except Exception as error:
-        print("Erreur Federal Reserve :", error)
-        data["indicators"]["fed_rate"] = None
+        print("Erreur Fed :", error)
 
     for name, code in INDICATORS.items():
         try:
