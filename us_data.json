@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-25T21:50:54.077148+00:00",
-  "source": "Banque mondiale et Federal Reserve Bank of New York",
+  "updated": "2026-11-25T21:56:43.288323+00:00",
+  "source": "Banque mondiale et banques fédérales américaines",
   "fed": {
     "value": 3.88,
     "date": "2026-11-24",
@@ -19,6 +19,30 @@
     "gdp": {
       "value": 2.16,
       "date": "2025"
+    }
+  },
+  "forecasts": {
+    "inflation": {
+      "month": "November 2026",
+      "cpi": 3.79,
+      "core_cpi": 2.87,
+      "pce": 3.78,
+      "core_pce": 3.38,
+      "source": "Federal Reserve Bank of Cleveland",
+      "type": "Nowcast annuel"
+    },
+    "gdp": {
+      "value": 2.9,
+      "quarter": "2026:Q4",
+      "date": "November 25, 2026",
+      "source": "Federal Reserve Bank of Atlanta",
+      "type": "Nowcast de croissance annualisée"
+    },
+    "employment": {
+      "source": "Federal Reserve Bank of Philadelphia",
+      "url": "https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/spf",
+      "type": "Prévisions trimestrielles des économistes",
+      "note": "Consulter la dernière enquête pour les projections de chômage et d'emploi."
     }
   }
 }
