@@ -433,7 +433,42 @@ async function loadUSData() {
 }
 
 loadUSData();
+async function loadUSForecasts() {
+  try {
+    const response = await fetch("us_data.json?t=" + Date.now());
 
+    if (!response.ok) {
+      throw new Error("Données indisponibles");
+    }
+
+    const data = await response.json();
+    const forecasts = data.forecasts;
+
+    if (forecasts.inflation) {
+      document.getElementById("us-forecast-cpi").textContent =
+        forecasts.inflation.cpi.toLocaleString("fr-FR") + "%";
+
+      document.getElementById("us-forecast-core-cpi").textContent =
+        forecasts.inflation.core_cpi.toLocaleString("fr-FR") + "%";
+
+      document.getElementById("us-forecast-cpi-date").textContent =
+        forecasts.inflation.month + " · Fed de Cleveland";
+    }
+
+    if (forecasts.gdp) {
+      document.getElementById("us-forecast-gdp").textContent =
+        forecasts.gdp.value.toLocaleString("fr-FR") + "%";
+
+      document.getElementById("us-forecast-gdp-date").textContent =
+        forecasts.gdp.quarter + " · " + forecasts.gdp.date;
+    }
+
+  } catch (error) {
+    console.error("Erreur prévisions USA :", error);
+  }
+}
+
+loadUSForecasts();
 </script>
 </body>
 </html>
