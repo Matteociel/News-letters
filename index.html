@@ -137,12 +137,22 @@ border-top:1px solid var(--line);font-size:11px}
  <p class="muted">Suivi de la première économie mondiale.</p>
  
  <div class="grid">
+ 
   <div class="card">
-   <h3>Federal Reserve</h3>
-   <p class="muted small">Taux directeur</p>
-   <h2>À connecter</h2>
-   <p class="muted small">Source : Federal Reserve</p>
+   <h3>Federal Reserve 🇺🇸</h3>
+   <p class="muted small">Taux effectif des Fed Funds</p>
+   <h2 id="us-fed-rate">Chargement...</h2>
+   <p class="muted small" id="us-fed-date"></p>
+   <div class="item">
+    <b>Fourchette cible officielle</b>
+    <p id="us-fed-target" class="muted small">En attente des données</p>
+   </div>
+   <a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      target="_blank" rel="noopener noreferrer">
+      Consulter les probabilités de hausse et de baisse →
+   </a>
   </div>
+
   <div class="card">
    <h3>Inflation 🇺🇸</h3>
    <p class="muted small">Inflation annuelle</p>
