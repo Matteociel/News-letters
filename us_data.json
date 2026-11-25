@@ -1,6 +1,12 @@
 {
-  "updated": "2026-11-25T21:38:12.574432+00:00",
-  "source": "Banque mondiale",
+  "updated": "2026-11-25T21:50:54.077148+00:00",
+  "source": "Banque mondiale et Federal Reserve Bank of New York",
+  "fed": {
+    "value": 3.88,
+    "date": "2026-11-24",
+    "target_min": 3.75,
+    "target_max": 4.0
+  },
   "indicators": {
     "inflation": {
       "value": 2.95,
