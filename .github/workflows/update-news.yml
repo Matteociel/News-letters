@@ -26,7 +26,9 @@ jobs:
         run: python fetch_news.py
 
       - name: Recuperer les donnees economiques
-        run: python fetch_economic_data.py
+        continue-on-error: true
+        timeout-minutes: 2
+        run: timeout 90s python fetch_economic_data.py
 
       - name: Enregistrer les actualites
         run: |
