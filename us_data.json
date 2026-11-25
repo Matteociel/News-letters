@@ -1,0 +1,18 @@
+{
+  "updated": "2026-11-25T21:38:12.574432+00:00",
+  "source": "Banque mondiale",
+  "indicators": {
+    "inflation": {
+      "value": 2.95,
+      "date": "2024"
+    },
+    "unemployment": {
+      "value": 4.2,
+      "date": "2025"
+    },
+    "gdp": {
+      "value": 2.16,
+      "date": "2025"
+    }
+  }
+}
