@@ -9,18 +9,20 @@ INDICATORS = {
     "gdp": "NY.GDP.MKTP.KD.ZG"
 }
 
+def get_json(url):
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "GEI-EconomicDashboard/1.0"}
+    )
+    with urllib.request.urlopen(request, timeout=20) as response:
+        return json.loads(response.read().decode("utf-8"))
+
 def fetch_indicator(code):
     url = (
         "https://api.worldbank.org/v2/country/USA/indicator/"
         + code + "?format=json&per_page=10"
     )
-    request = urllib.request.Request(
-        url,
-        headers={"User-Agent": "GEI-EconomicDashboard/1.0"}
-    )
-
-    with urllib.request.urlopen(request, timeout=15) as response:
-        result = json.loads(response.read().decode("utf-8"))
+    result = get_json(url)
 
     if len(result) < 2 or not result[1]:
         return None
@@ -31,15 +33,38 @@ def fetch_indicator(code):
                 "value": round(item["value"], 2),
                 "date": item["date"]
             }
-
     return None
+
+def fetch_fed_rate():
+    url = "https://markets.newyorkfed.org/api/rates/unsecured/effr/last/1.json"
+    result = get_json(url)
+    rates = result.get("refRates", [])
+
+    if not rates:
+        return None
+
+    rate = rates[0]
+
+    return {
+        "value": rate.get("percentRate"),
+        "date": rate.get("effectiveDate"),
+        "target_min": rate.get("targetRateFrom"),
+        "target_max": rate.get("targetRateTo")
+    }
 
 def main():
     data = {
         "updated": datetime.now(timezone.utc).isoformat(),
-        "source": "Banque mondiale",
+        "source": "Banque mondiale et Réserve fédérale de New York",
         "indicators": {}
     }
+
+    try:
+        data["indicators"]["fed_rate"] = fetch_fed_rate()
+        print("Federal Reserve : OK")
+    except Exception as error:
+        print("Erreur Federal Reserve :", error)
+        data["indicators"]["fed_rate"] = None
 
     for name, code in INDICATORS.items():
         try:
