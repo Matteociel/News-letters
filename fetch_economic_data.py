@@ -1,98 +1,58 @@
 
-import csv
 import json
-import time
 import urllib.request
 from datetime import datetime, timezone
-from io import StringIO
 
-SERIES = {
-    "fed_rate": "FEDFUNDS",
-    "inflation": "CPIAUCSL",
-    "unemployment": "UNRATE",
-    "payrolls": "PAYEMS",
-    "gdp": "A191RL1Q225SBEA"
+INDICATORS = {
+    "inflation": "FP.CPI.TOTL.ZG",
+    "unemployment": "SL.UEM.TOTL.ZS",
+    "gdp": "NY.GDP.MKTP.KD.ZG"
 }
 
-def fetch_series(series_id):
+def fetch_indicator(code):
     url = (
-        "https://fred.stlouisfed.org/graph/fredgraph.csv"
-        f"?id={series_id}&cosd=2015-01-01"
+        "https://api.worldbank.org/v2/country/USA/indicator/"
+        + code + "?format=json&per_page=10"
+    )
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "GEI-EconomicDashboard/1.0"}
     )
 
-    for attempt in range(3):
-        try:
-            request = urllib.request.Request(
-                url,
-                headers={"User-Agent": "Mozilla/5.0"}
-            )
+    with urllib.request.urlopen(request, timeout=15) as response:
+        result = json.loads(response.read().decode("utf-8"))
 
-            with urllib.request.urlopen(request, timeout=60) as response:
-                content = response.read().decode("utf-8")
+    if len(result) < 2 or not result[1]:
+        return None
 
-            rows = list(csv.DictReader(StringIO(content)))
+    for item in result[1]:
+        if item["value"] is not None:
+            return {
+                "value": round(item["value"], 2),
+                "date": item["date"]
+            }
 
-            return [
-                {
-                    "date": row["observation_date"],
-                    "value": row[series_id]
-                }
-                for row in rows
-                if row.get(series_id) not in ("", ".")
-            ]
-
-        except Exception as error:
-            print(f"Tentative {attempt + 1}/3 pour {series_id}: {error}")
-            if attempt < 2:
-                time.sleep(5)
-
-    return []
+    return None
 
 def main():
     data = {
         "updated": datetime.now(timezone.utc).isoformat(),
-        "source": "FRED - Federal Reserve Bank of St. Louis",
+        "source": "Banque mondiale",
         "indicators": {}
     }
 
-    successful = 0
-
-    for name, series_id in SERIES.items():
-        values = fetch_series(series_id)
-
-        if values:
-            successful += 1
-            data["indicators"][name] = {
-                "latest": values[-1],
-                "previous": values[-2] if len(values) > 1 else None,
-                "history": values[-15:]
-            }
-            print(f"{name}: OK")
-        else:
+    for name, code in INDICATORS.items():
+        try:
+            data["indicators"][name] = fetch_indicator(code)
+            print(name, data["indicators"][name])
+        except Exception as error:
+            print("Erreur", name, error)
             data["indicators"][name] = None
-            print(f"{name}: indisponible")
-
-    inflation = data["indicators"].get("inflation")
-
-    if inflation and len(inflation["history"]) >= 13:
-        values = fetch_series("CPIAUCSL")
-
-        if len(values) >= 13:
-            current = float(values[-1]["value"])
-            year_ago = float(values[-13]["value"])
-
-            data["indicators"]["inflation_yoy"] = {
-                "value": round((current / year_ago - 1) * 100, 2),
-                "date": values[-1]["date"]
-            }
 
     with open("us_data.json", "w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
 
-    print(f"{successful}/5 indicateurs récupérés.")
-
-    if successful == 0:
-        raise SystemExit("Aucune donnée récupérée depuis FRED.")
+    print("Fichier us_data.json créé.")
 
 if __name__ == "__main__":
     main()
