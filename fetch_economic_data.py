@@ -86,7 +86,40 @@ def fetch_fed_rate():
         "target_max": rate.get("targetRateTo")
     }
 
+FOMC_MEETINGS = [
+    {"start": "2026-12-08", "end": "2026-12-09", "decision": True},
+    {"start": "2027-01-26", "end": "2027-01-27", "decision": True},
+    {"start": "2027-03-16", "end": "2027-03-17", "decision": True},
+    {"start": "2027-04-27", "end": "2027-04-28", "decision": True},
+    {"start": "2027-06-08", "end": "2027-06-09", "decision": True},
+    {"start": "2027-07-27", "end": "2027-07-28", "decision": True},
+    {"start": "2027-09-14", "end": "2027-09-15", "decision": True},
+    {"start": "2027-10-26", "end": "2027-10-27", "decision": False},
+    {"start": "2027-11-16", "end": "2027-11-17", "decision": True}
+]
 
+
+def fetch_next_fomc():
+    today = datetime.now(timezone.utc).date()
+
+    for meeting in FOMC_MEETINGS:
+        end_date = datetime.strptime(
+            meeting["end"], "%Y-%m-%d"
+        ).date()
+
+        if end_date >= today:
+            return {
+                "start": meeting["start"],
+                "end": meeting["end"],
+                "decision_expected": meeting["decision"],
+                "decision_date": (
+                    meeting["end"] if meeting["decision"] else None
+                ),
+                "source": "Federal Reserve",
+                "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+            }
+
+    return None
 def fetch_cleveland_inflation():
     url = "https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting"
     text = get_page_text(url)
