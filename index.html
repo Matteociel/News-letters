@@ -285,127 +285,27 @@ async function loadNews() {
       data.count + " publications · Mise à jour : " +
       new Date(data.updated).toLocaleString("fr-FR");
 
-    
-list.style.display = "grid";
-list.style.gridTemplateColumns = "repeat(auto-fit, minmax(280px, 1fr))";
-list.style.gap = "18px";
-
-data.articles.forEach(article => {
-    const card = document.createElement("div");
-
-    card.style.background = "#151e2d";
-    card.style.border = "1px solid #263449";
-    card.style.borderRadius = "12px";
-    card.style.overflow = "hidden";
-    card.style.transition = "transform 0.2s";
-
-    const link = document.createElement("a");
-    link.href = article.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.style.display = "block";
-    link.style.color = "inherit";
-    link.style.textDecoration = "none";
-
-    if (article.image) {
-        const image = document.createElement("img");
-        image.src = article.image;
-        image.alt = "";
-        image.loading = "lazy";
-        image.style.width = "100%";
-        image.style.height = "180px";
-        image.style.objectFit = "cover";
-        image.onerror = () => image.remove();
-
-        link.appendChild(image);
-    }
-
-    const content = document.createElement("div");
-    content.style.padding = "16px";
-
-    const category = document.createElement("div");
-    category.textContent = article.region + " · " + article.source;
-    category.style.color = "#68a5ff";
-    category.style.fontSize = "11px";
-    category.style.fontWeight = "bold";
-    category.style.marginBottom = "10px";
-
-    const title = document.createElement("h3");
-    title.textContent = article.title;
-    title.style.color = "#f1f5f9";
-    title.style.fontSize = "16px";
-    title.style.lineHeight = "1.45";
-    title.style.margin = "0 0 12px 0";
-
-    const date = document.createElement("div");
-    date.textContent = article.date
-        ? new Date(article.date).toLocaleDateString("fr-FR")
-        : "Date non disponible";
-    date.style.color = "#8b9bb0";
-    date.style.fontSize = "12px";
-
-    content.append(category, title, date);
-    link.appendChild(content);
-    card.appendChild(link);
-
-    card.onmouseenter = () => {
-        card.style.transform = "translateY(-4px)";
-    };
-
-    card.onmouseleave = () => {
-        card.style.transform = "translateY(0)";
-    };
-
-    list.appendChild(card);
-});
-
+    data.articles.forEach(article => {
       const item = document.createElement("div");
       item.className = "item";
 
-     
-const item = document.createElement("div");
-item.className = "item";
-item.style.display = "flex";
-item.style.gap = "15px";
-item.style.alignItems = "flex-start";
-item.style.marginBottom = "20px";
+      const title = document.createElement("a");
+      title.href = article.url;
+      title.target = "_blank";
+      title.rel = "noopener noreferrer";
+      title.textContent = article.title;
+      title.style.color = "#76aaff";
+      title.style.fontWeight = "bold";
+      title.style.textDecoration = "none";
 
-if (article.image) {
-    const image = document.createElement("img");
-    image.src = article.image;
-    image.alt = "";
-    image.loading = "lazy";
-    image.style.width = "130px";
-    image.style.height = "85px";
-    image.style.objectFit = "cover";
-    image.style.borderRadius = "8px";
-    image.style.flexShrink = "0";
-    image.onerror = () => image.remove();
+      const meta = document.createElement("p");
+      meta.className = "muted small";
+      meta.textContent =
+        article.source + " · " + article.region +
+        (article.date ? " · " + article.date : "");
 
-    item.appendChild(image);
-}
-
-const content = document.createElement("div");
-
-const title = document.createElement("a");
-title.href = article.url;
-title.target = "_blank";
-title.rel = "noopener noreferrer";
-title.textContent = article.title;
-title.style.color = "#76aaff";
-title.style.fontWeight = "bold";
-title.style.textDecoration = "none";
-
-const meta = document.createElement("p");
-meta.className = "muted small";
-meta.textContent =
-    article.source + " · " + article.region +
-    (article.date ? " · " + article.date : "");
-
-content.append(title, meta);
-item.appendChild(content);
-list.appendChild(item);
-
+      item.append(title, meta);
+      list.appendChild(item);
     });
 
   } catch (error) {
