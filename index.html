@@ -338,6 +338,63 @@ async function loadNews() {
 
 loadNews();
 
+async function loadUSData() {
+  try {
+    const response = await fetch("us_data.json?t=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Données indisponibles");
+    }
+
+    const data = await response.json();
+    const indicators = data.indicators;
+
+    function display(id, indicator, suffix = "%") {
+      const valueElement = document.getElementById(id);
+      const dateElement = document.getElementById(id + "-date");
+
+      if (!valueElement) return;
+
+      if (indicator && indicator.value !== null) {
+        valueElement.textContent = indicator.value.toLocaleString(
+          "fr-FR"
+        ) + suffix;
+
+        dateElement.textContent =
+          "Donnée annuelle · " + indicator.date;
+      } else {
+        valueElement.textContent = "Indisponible";
+        if (dateElement) dateElement.textContent = "";
+      }
+    }
+
+    display(
+      "us-inflation",
+      indicators.inflation
+    );
+
+    display(
+      "us-unemployment",
+      indicators.unemployment
+    );
+
+    display(
+      "us-gdp",
+      indicators.gdp
+    );
+
+  } catch (error) {
+    console.error("Erreur données USA :", error);
+
+    ["us-inflation", "us-unemployment", "us-gdp"].forEach(id => {
+      const element = document.getElementById(id);
+      if (element) element.textContent = "Indisponible";
+    });
+  }
+}
+
+loadUSData();
+
 </script>
 </body>
 </html>
