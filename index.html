@@ -4,73 +4,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GEI - Global Economic Intelligence</title>
+<title>GEI | Global Economic Intelligence</title>
 <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0; background: #0b1120; color: #e5eaf2;
-  font-family: Arial, sans-serif;
+:root {
+  --bg:#080e18; --panel:#111c2b; --panel2:#172438;
+  --line:#26374d; --text:#e8eef7; --muted:#8da0b8;
+  --green:#54d6a0; --blue:#76aaff; --gold:#e8bd65;
 }
-header {
-  padding: 25px 5%; background: #111b2d;
-  border-bottom: 1px solid #26364d;
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+font-family:Arial,sans-serif}
+header{padding:22px 5%;border-bottom:1px solid var(--line);
+background:#0c1523;display:flex;justify-content:space-between;
+align-items:center;gap:20px;flex-wrap:wrap}
+.logo{font-size:21px;font-weight:800;letter-spacing:2px}
+.logo span{color:var(--green)}
+.subtitle{font-size:10px;letter-spacing:3px;color:var(--muted);margin-top:7px}
+.status{font-size:11px;color:var(--green)}
+nav{display:flex;gap:8px;flex-wrap:wrap;padding:14px 5%;
+border-bottom:1px solid var(--line);background:#0d1725}
+nav button{background:transparent;color:var(--muted);border:1px solid var(--line);
+padding:10px 13px;border-radius:6px;cursor:pointer}
+nav button.active,nav button:hover{background:var(--panel2);color:var(--green)}
+main{max-width:1400px;margin:auto;padding:28px 5%}
+h1{font-size:27px;margin:0 0 8px}
+h2{font-size:17px;margin:0 0 17px}
+h3{font-size:15px;margin:0 0 10px}
+p{line-height:1.6}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.card{background:var(--panel);border:1px solid var(--line);
+border-radius:9px;padding:19px;margin-bottom:15px}
+.metric{font-size:25px;font-weight:700;margin:12px 0;color:var(--blue)}
+.tag{font-size:10px;color:var(--green);letter-spacing:1.5px}
+.editions{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:22px 0}
+.edition{background:var(--panel2);border:1px solid var(--line);
+padding:20px;border-radius:9px}
+.time{font-size:32px;color:var(--green);font-weight:bold;margin:10px 0}
+.item{padding:15px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.pill{display:inline-block;padding:5px 8px;border-radius:4px;
+background:#203b38;color:var(--green);font-size:10px}
+.gold{color:var(--gold)}
+button.action{background:#1b3441;color:var(--green);border:1px solid #315b58;
+padding:10px 14px;border-radius:5px;cursor:pointer}
+input,textarea,select{width:100%;padding:11px;background:#0b1421;
+border:1px solid var(--line);border-radius:5px;color:var(--text);margin:7px 0}
+textarea{min-height:100px;resize:vertical}
+.panel{display:none}
+.panel.active{display:block}
+footer{text-align:center;color:var(--muted);padding:30px;
+border-top:1px solid var(--line);font-size:11px}
+@media(max-width:800px){
+.grid{grid-template-columns:repeat(2,1fr)}
+.grid2,.editions{grid-template-columns:1fr}
+.logo{font-size:17px}
 }
-h1 { margin: 0; letter-spacing: 2px; font-size: 25px; }
-header p { color: #8fa4bd; font-size: 12px; letter-spacing: 3px; }
-main { max-width: 1200px; margin: auto; padding: 30px 20px; }
-h2 { font-size: 19px; }
-.grid {
-  display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 16px; margin: 20px 0 35px;
+@media(max-width:430px){
+.grid{grid-template-columns:1fr 1fr}
+.metric{font-size:20px}
 }
-.card {
-  background: #152238; border: 1px solid #293c57;
-  border-radius: 10px; padding: 22px;
-}
-.card p { color: #91a5bd; font-size: 13px; }
-.time { font-size: 32px; color: #65d6a2; font-weight: bold; }
-.tag { color: #65d6a2; font-size: 12px; }
-ul { padding-left: 20px; color: #b7c5d7; line-height: 2.2; }
-footer { text-align: center; padding: 30px; color: #70839c; font-size: 12px; }
 </style>
 </head>
 <body>
+
 <header>
-  <h1>GLOBAL ECONOMIC INTELLIGENCE</h1>
-  <p>US · EUROPE · GLOBAL MARKETS</p>
+ <div>
+  <div class="logo">GLOBAL <span>ECONOMIC</span> INTELLIGENCE</div>
+  <div class="subtitle">US · EUROPE · GLOBAL MARKETS</div>
+ </div>
+ <div class="status">● CENTRE DE VEILLE GEI</div>
 </header>
+
+<nav>
+ <button class="active" onclick="showPanel('dashboard',this)">Dashboard</button>
+ <button onclick="showPanel('usa',this)">États-Unis</button>
+ <button onclick="showPanel('europe',this)">Europe</button>
+ <button onclick="showPanel('markets',this)">Marchés</button>
+ <button onclick="showPanel('crypto',this)">Crypto</button>
+ <button onclick="showPanel('calendar',this)">Calendrier</button>
+ <button onclick="showPanel('analysis',this)">Analyses</button>
+</nav>
+
 <main>
-  <p class="tag">● CENTRE DE VEILLE ÉCONOMIQUE</p>
-  <h2>Tableau de bord</h2>
-  <div class="grid">
-    <div class="card">
-      <p>ÉDITION DU MATIN</p>
-      <div class="time">07:00</div>
-      <p>Actualités de la nuit et événements à venir.</p>
-    </div>
-    <div class="card">
-      <p>ÉDITION DU SOIR</p>
-      <div class="time">18:00</div>
-      <p>Bilan économique et financier de la journée.</p>
-    </div>
+
+<section id="dashboard" class="panel active">
+ <div class="tag">GLOBAL ECONOMIC INTELLIGENCE / HOME</div>
+ <h1>Tableau de bord économique</h1>
+ <p class="muted">L'essentiel de l'économie mondiale, deux fois par jour.</p>
+
+ <div class="editions">
+  <div class="edition">
+   <div class="tag">MORNING BRIEFING</div>
+   <div class="time">07:00</div>
+   <p class="small muted">Actualités de la nuit, marchés asiatiques et événements à venir.</p>
   </div>
-  <h2>Rubriques économiques</h2>
-  <div class="grid">
-    <div class="card"><h3>🇺🇸 États-Unis</h3><p>Fed, économie, inflation et politique américaine.</p></div>
-    <div class="card"><h3>🇪🇺 Europe</h3><p>BCE, croissance, emploi et économie européenne.</p></div>
-    <div class="card"><h3>📊 Marchés financiers</h3><p>Actions, obligations, dollar et euro.</p></div>
-    <div class="card"><h3>🏭 Entreprises</h3><p>Résultats, acquisitions et actualités majeures.</p></div>
-    <div class="card"><h3>₿ Bitcoin & Crypto</h3><p>Bitcoin, cryptomonnaies et réglementation.</p></div>
-    <div class="card"><h3>🥇 Or & Argent</h3><p>Métaux précieux et matières premières.</p></div>
-    <div class="card"><h3>🌍 Géopolitique</h3><p>Commerce, conflits, énergie et conséquences économiques.</p></div>
-    <div class="card"><h3>📅 Calendrier économique</h3><p>Publications et décisions à surveiller.</p></div>
+  <div class="edition">
+   <div class="tag">EVENING BRIEFING</div>
+   <div class="time">18:00</div>
+   <p class="small muted">Bilan de la journée, marchés américains et nouvelles publications.</p>
+  </div>
+ </div>
+
+ <h2>Indicateurs de marché</h2>
+ <div class="grid">
+  <div class="card"><div class="tag">BITCOIN</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
+  <div class="card"><div class="tag">S&P 500</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
+  <div class="card"><div class="tag">OR</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
+  <div class="card"><div class="tag">DOLLAR / EURO</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
+ </div>
+
+ <div class="grid2">
+  <div class="card">
+   <h2>Actualités importantes</h2>
+   <div class="item"><span class="pill">À CONNECTER</span><p class="muted small">Les dernières informations économiques apparaîtront ici.</p></div>
+   <div class="item"><span class="pill">À CONNECTER</span><p class="muted small">Les publications et annonces majeures seront classées par importance.</p></div>
   </div>
   <div class="card">
-    <h2>Dernières éditions</h2>
-    <p>Les bulletins économiques apparaîtront ici lorsque nous connecterons les sources et les automatisations.</p>
-    <span class="tag">EN CONSTRUCTION</span>
+   <h2>Agenda économique</h2>
+   <div class="item"><b>Federal Reserve</b><p class="muted small">Décisions de politique monétaire</p></div>
+   <div class="item"><b>Banque centrale européenne</b><p class="muted small">Taux et politique monétaire</p></div>
+   <div class="item"><b>Inflation et emploi</b><p class="muted small">Prochaines publications à renseigner</p></div>
   </div>
+ </div>
+</section>
+
+<section id="usa" class="panel">
+ <div class="tag">UNITED STATES</div>
+ <h1>États-Unis 🇺🇸</h1>
+ <p class="muted">Suivi de la première économie mondiale.</p>
+ <div class="grid">
+  <div class="card"><h3>Federal Reserve</h3><p class="muted small">Taux directeurs, discours et politique monétaire.</p></div>
+  <div class="card"><h3>Inflation</h3><p class="muted small">CPI, PCE et évolution des prix.</p></div>
+  <div class="card"><h3>Emploi</h3><p class="muted small">Chômage, salaires et créations d'emplois.</p></div>
+  <div class="card"><h3>PIB & croissance</h3><p class="muted small">Consommation, production et activité.</p></div>
+ </div>
+ <div class="card"><h2>Dernières informations américaines</h2><p class="muted">Flux d'actualités à connecter.</p></div>
+</section>
+
+<section id="europe" class="panel">
+ <div class="tag">EUROPEAN UNION</div>
+ <h1>Europe 🇪🇺</h1>
+ <p class="muted">Économie européenne et décisions politiques.</p>
+ <div class="grid">
+  <div class="card"><h3>BCE</h3><p class="muted small">Taux, liquidités et politique monétaire.</p></div>
+  <div class="card"><h3>Inflation</h3><p class="muted small">Prix à la consommation et énergie.</p></div>
+  <div class="card"><h3>Activité</h3><p class="muted small">PMI, PIB et production industrielle.</p></div>
+  <div class="card"><h3>Emploi</h3><p class="muted small">Chômage et marché du travail.</p></div>
+ </div>
+ <div class="card"><h2>Dernières informations européennes</h2><p class="muted">Flux d'actualités à connecter.</p></div>
+</section>
+
+<section id="markets" class="panel">
+ <div class="tag">GLOBAL MARKETS</div>
+ <h1>Marchés financiers 📊</h1>
+ <div class="grid">
+  <div class="card"><h3>Actions US</h3><p class="muted small">S&P 500, Nasdaq, Dow Jones.</p></div>
+  <div class="card"><h3>Actions Europe</h3><p class="muted small">CAC 40, DAX, Euro Stoxx 50.</p></div>
+  <div class="card"><h3>Obligations</h3><p class="muted small">Rendements souverains et crédit.</p></div>
+  <div class="card"><h3>Devises</h3><p class="muted small">Dollar, euro et autres monnaies.</p></div>
+ </div>
+ <div class="card"><h2>Analyse des marchés</h2><p class="muted">Données de marché à connecter.</p></div>
+</section>
+
+<section id="crypto" class="panel">
+ <div class="tag">DIGITAL ASSETS</div>
+ <h1>Bitcoin & cryptomonnaies ₿</h1>
+ <div class="grid">
+  <div class="card"><h3>Bitcoin</h3><p class="muted small">Prix, flux et adoption.</p></div>
+  <div class="card"><h3>Ethereum</h3><p class="muted small">Écosystème et évolution.</p></div>
+  <div class="card"><h3>Altcoins</h3><p class="muted small">Projets et tendances.</p></div>
+  <div class="card"><h3>Réglementation</h3><p class="muted small">Décisions et cadre juridique.</p></div>
+ </div>
+ <div class="card"><h2>Analyse crypto</h2><p class="muted">Actualités et données à connecter.</p></div>
+</section>
+
+<section id="calendar" class="panel">
+ <div class="tag">ECONOMIC CALENDAR</div>
+ <h1>Calendrier économique 📅</h1>
+ <div class="card">
+  <p>Les événements seront ajoutés avec leur date, leur heure de Paris, leur importance et leur source.</p>
+  <div class="item"><b>Inflation américaine (CPI)</b><p class="muted small">Date à renseigner · États-Unis</p></div>
+  <div class="item"><b>Décision de la BCE</b><p class="muted small">Date à renseigner · Europe</p></div>
+  <div class="item"><b>Emploi américain</b><p class="muted small">Date à renseigner · États-Unis</p></div>
+ </div>
+</section>
+
+<section id="analysis" class="panel">
+ <div class="tag">INTELLIGENCE & RESEARCH</div>
+ <h1>Analyses économiques</h1>
+ <div class="card">
+  <h2>Ajouter une analyse personnelle</h2>
+  <label class="small muted">Titre</label>
+  <input id="title" placeholder="Ex : Impact d'une baisse des taux de la Fed">
+  <label class="small muted">Catégorie</label>
+  <select id="category">
+   <option>Macroéconomie</option>
+   <option>Bitcoin & Crypto</option>
+   <option>Actions</option>
+   <option>Or & Argent</option>
+   <option>Géopolitique</option>
+  </select>
+  <label class="small muted">Contenu</label>
+  <textarea id="content" placeholder="Écris ton analyse ici..."></textarea>
+  <button class="action" onclick="addAnalysis()">Enregistrer l'analyse</button>
+  <p class="muted small">Les analyses sont conservées dans le navigateur de cet appareil.</p>
+ </div>
+ <div class="card">
+  <h2>Mes analyses enregistrées</h2>
+  <div id="saved"><p class="muted small">Aucune analyse enregistrée.</p></div>
+ </div>
+</section>
+
 </main>
-<footer>GEI — GLOBAL ECONOMIC INTELLIGENCE · 2026</footer>
+
+<footer>
+ GLOBAL ECONOMIC INTELLIGENCE · GEI<br>
+ Veille économique indépendante · US · EUROPE · GLOBAL MARKETS
+</footer>
+
+<script>
+function showPanel(id,button){
+ document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ button.classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function addAnalysis(){
+ const title=document.getElementById('title').value.trim();
+ const category=document.getElementById('category').value;
+ const content=document.getElementById('content').value.trim();
+ if(!title||!content){alert('Ajoute un titre et un contenu.');return;}
+ const entries=JSON.parse(localStorage.getItem('gei_analyses')||'[]');
+ entries.unshift({title,category,content,date:new Date().toLocaleDateString('fr-FR')});
+ localStorage.setItem('gei_analyses',JSON.stringify(entries));
+ document.getElementById('title').value='';
+ document.getElementById('content').value='';
+ renderAnalyses();
+}
+function renderAnalyses(){
+ const entries=JSON.parse(localStorage.getItem('gei_analyses')||'[]');
+ const saved=document.getElementById('saved');
+ if(!entries.length){saved.innerHTML='<p class="muted small">Aucune analyse enregistrée.</p>';return;}
+ saved.innerHTML='';
+ entries.forEach(entry=>{
+  const div=document.createElement('div');
+  div.className='item';
+  const h=document.createElement('b');h.textContent=entry.title;
+  const meta=document.createElement('p');meta.className='muted small';meta.textContent=entry.category+' · '+entry.date;
+  const body=document.createElement('p');body.textContent=entry.content;
+  div.append(h,meta,body);saved.appendChild(div);
+ });
+}
+renderAnalyses();
+</script>
 </body>
 </html>
