@@ -10,6 +10,9 @@ from datetime import datetime, timezone
 MARKETS = {
     "bitcoin": "BTC-USD",
     "ethereum": "ETH-USD",
+    "solana": "SOL-USD",
+"chainlink": "LINK-USD",
+"bittensor": "TAO-USD",
     "sp500": "^GSPC",
     "nasdaq": "^IXIC",
     "cac40": "^FCHI",
