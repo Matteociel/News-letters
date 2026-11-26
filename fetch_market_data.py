@@ -1,6 +1,7 @@
 
 import json
 import urllib.request
+import urllib.parse
 from datetime import datetime, timezone
 
 # Sources de données Yahoo Finance
@@ -14,7 +15,7 @@ MARKETS = {
 def get_price(symbol):
     url = (
         "https://query1.finance.yahoo.com/v8/finance/chart/"
-        + urllib.request.quote(symbol, safe="")
+        + urllib.parse.quote(symbol, safe="")
         + "?range=1d&interval=5m"
     )
 
