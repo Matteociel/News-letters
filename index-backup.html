@@ -1,1 +1,578 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEI | Global Economic Intelligence</title>
+<style>
+:root {
+  --bg:#080e18; --panel:#111c2b; --panel2:#172438;
+  --line:#26374d; --text:#e8eef7; --muted:#8da0b8;
+  --green:#54d6a0; --blue:#76aaff; --gold:#e8bd65;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+font-family:Arial,sans-serif}
+header{padding:22px 5%;border-bottom:1px solid var(--line);
+background:#0c1523;display:flex;justify-content:space-between;
+align-items:center;gap:20px;flex-wrap:wrap}
+.logo{font-size:21px;font-weight:800;letter-spacing:2px}
+.logo span{color:var(--green)}
+.subtitle{font-size:10px;letter-spacing:3px;color:var(--muted);margin-top:7px}
+.status{font-size:11px;color:var(--green)}
+nav{display:flex;gap:8px;flex-wrap:wrap;padding:14px 5%;
+border-bottom:1px solid var(--line);background:#0d1725}
+nav button{background:transparent;color:var(--muted);border:1px solid var(--line);
+padding:10px 13px;border-radius:6px;cursor:pointer}
+nav button.active,nav button:hover{background:var(--panel2);color:var(--green)}
+main{max-width:1400px;margin:auto;padding:28px 5%}
+h1{font-size:27px;margin:0 0 8px}
+h2{font-size:17px;margin:0 0 17px}
+h3{font-size:15px;margin:0 0 10px}
+p{line-height:1.6}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.card{background:var(--panel);border:1px solid var(--line);
+border-radius:9px;padding:19px;margin-bottom:15px}
+.metric{font-size:25px;font-weight:700;margin:12px 0;color:var(--blue)}
+.tag{font-size:10px;color:var(--green);letter-spacing:1.5px}
+.editions{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:22px 0}
+.edition{background:var(--panel2);border:1px solid var(--line);
+padding:20px;border-radius:9px}
+.time{font-size:32px;color:var(--green);font-weight:bold;margin:10px 0}
+.item{padding:15px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.pill{display:inline-block;padding:5px 8px;border-radius:4px;
+background:#203b38;color:var(--green);font-size:10px}
+.gold{color:var(--gold)}
+button.action{background:#1b3441;color:var(--green);border:1px solid #315b58;
+padding:10px 14px;border-radius:5px;cursor:pointer}
+input,textarea,select{width:100%;padding:11px;background:#0b1421;
+border:1px solid var(--line);border-radius:5px;color:var(--text);margin:7px 0}
+textarea{min-height:100px;resize:vertical}
+.panel{display:none}
+.panel.active{display:block}
+footer{text-align:center;color:var(--muted);padding:30px;
+border-top:1px solid var(--line);font-size:11px}
+@media(max-width:800px){
+.grid{grid-template-columns:repeat(2,1fr)}
+.grid2,.editions{grid-template-columns:1fr}
+.logo{font-size:17px}
+}
+@media(max-width:430px){
+.grid{grid-template-columns:1fr 1fr}
+.metric{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div>
+  <div class="logo">GLOBAL <span>ECONOMIC</span> INTELLIGENCE</div>
+  <div class="subtitle">US · EUROPE · GLOBAL MARKETS</div>
+ </div>
+ <div class="status">● CENTRE DE VEILLE GEI</div>
+</header>
+
+<nav>
+ <button class="active" onclick="showPanel('dashboard',this)">Dashboard</button>
+ <button onclick="showPanel('usa',this)">États-Unis</button>
+ <button onclick="showPanel('europe',this)">Europe</button>
+ <button onclick="showPanel('markets',this)">Marchés</button>
+ <button onclick="showPanel('crypto',this)">Crypto</button>
+ <button onclick="showPanel('calendar',this)">Calendrier</button>
+ <button onclick="showPanel('analysis',this)">Analyses</button>
+</nav>
+
+<main>
+
+<section id="dashboard" class="panel active">
+ <div class="tag">GLOBAL ECONOMIC INTELLIGENCE / HOME</div>
+ <h1>Tableau de bord économique</h1>
+ <p class="muted">L'essentiel de l'économie mondiale, deux fois par jour.</p>
+
+ <div class="editions">
+  <div class="edition">
+   <div class="tag">MORNING BRIEFING</div>
+   <div class="time">07:00</div>
+   <p class="small muted">Actualités de la nuit, marchés asiatiques et événements à venir.</p>
+  </div>
+  <div class="edition">
+   <div class="tag">EVENING BRIEFING</div>
+   <div class="time">18:00</div>
+   <p class="small muted">Bilan de la journée, marchés américains et nouvelles publications.</p>
+  </div>
+ </div>
+
+ <h2>Indicateurs de marché</h2>
+ <div class="grid">
+  <div class="card"><div class="tag">BITCOIN</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
+  <div class="card"><div class="tag">S&P 500</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
+  <div class="card"><div class="tag">OR</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
+  <div class="card"><div class="tag">DOLLAR / EURO</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
+ </div>
+
+ <div class="grid2">
+  <div class="card">
+   <h2>Dernières actualités économiques</h2>
+  <div id="news-status" class="muted small">Chargement des actualités...</div>
+  <div id="news-list"></div>
+  </div>
+  <div class="card">
+   <h2>Agenda économique</h2>
+   <div class="item"><b>Federal Reserve</b><p class="muted small">Décisions de politique monétaire</p></div>
+   <div class="item"><b>Banque centrale européenne</b><p class="muted small">Taux et politique monétaire</p></div>
+   <div class="item"><b>Inflation et emploi</b><p class="muted small">Prochaines publications à renseigner</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="usa" class="panel">
+ <div class="tag">UNITED STATES</div>
+ <h1>États-Unis 🇺🇸</h1>
+ <p class="muted">Suivi de la première économie mondiale.</p>
+ 
+ <div class="grid">
+ 
+  <div class="card">
+   <h3>Federal Reserve 🇺🇸</h3>
+   <p class="muted small">Taux effectif des Fed Funds</p>
+   <h2 id="us-fed-rate">Chargement...</h2>
+   <p class="muted small" id="us-fed-date"></p>
+   <div class="item">
+    <b>Fourchette cible officielle</b>
+    <p id="us-fed-target" class="muted small">En attente des données</p>
+   </div>
+   <a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+      target="_blank" rel="noopener noreferrer">
+      Voir les probabilités CME FedWatch →
+   </a>
+  </div>
+
+  <div class="card">
+   <h3>Inflation 🇺🇸</h3>
+   <p class="muted small">Inflation annuelle</p>
+   <h2 id="us-inflation">Chargement...</h2>
+   <p class="muted small" id="us-inflation-date"></p>
+  </div>
+  <div class="card">
+   <h3>Emploi 🇺🇸</h3>
+   <p class="muted small">Taux de chômage</p>
+   <h2 id="us-unemployment">Chargement...</h2>
+   <p class="muted small" id="us-unemployment-date"></p>
+  </div>
+  <div class="card">
+   <h3>PIB & croissance 🇺🇸</h3>
+   <p class="muted small">Croissance annuelle</p>
+   <h2 id="us-gdp">Chargement...</h2>
+   <p class="muted small" id="us-gdp-date"></p>
+  </div>
+ </div>
+<div class="card">
+  <h2>Prévisions économiques américaines 🇺🇸</h2>
+  <p class="muted small">Estimations des banques fédérales américaines</p>
+
+  <div class="grid">
+    <div class="item">
+      <h3>Inflation CPI</h3>
+      <h2 id="us-forecast-cpi">Chargement...</h2>
+      <p id="us-forecast-cpi-date" class="muted small"></p>
+    </div>
+
+<div class="item">
+  <h3>Inflation PCE</h3>
+  <h2 id="us-forecast-pce">Chargement...</h2>
+  <p id="us-forecast-pce-date" class="muted small"></p>
+</div>
+
+<div class="item">
+  <h3>Inflation PCE</h3>
+  <h2 id="us-forecast-pce">Chargement...</h2>
+</div>
+
+<div class="item">
+  <h3>Inflation Core PCE</h3>
+  <h2 id="us-forecast-core-pce">Chargement...</h2>
+  <p id="us-forecast-core-pce-date" class="muted small"></p>
+</div>
+
+    <div class="item">
+      <h3>PIB - GDPNow</h3>
+      <h2 id="us-forecast-gdp">Chargement...</h2>
+      <p id="us-forecast-gdp-date" class="muted small"></p>
+    </div>
+
+    <div class="item">
+      <h3>Prévisions emploi</h3>
+      <p class="muted small">Enquête trimestrielle des économistes</p>
+      <a href="https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/spf"
+         target="_blank">Consulter les prévisions →</a>
+    </div>
+  </div>
+</div>
+ <div class="card"><h2>Dernières informations américaines</h2><p class="muted">Flux d'actualités à connecter.</p></div>
+   <div class="card">
+  <h2>Prochaine réunion FOMC 🇺🇸</h2>
+  <p class="muted small">Calendrier officiel de la Federal Reserve</p>
+  <h3 id="us-fomc-dates">Chargement...</h3>
+  <p id="us-fomc-decision" class="muted small"></p>
+     <p id="us-fomc-countdown" class="muted small">Calcul du compte à rebours...</p>
+  <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+     target="_blank" rel="noopener noreferrer">
+    Consulter le calendrier officiel →
+  </a>
+ </div>
+
+ <div class="card">
+  <h2>Projections officielles de la Fed 🇺🇸</h2>
+  <p class="muted small">Dot Plot — projections des membres du FOMC</p>
+  <p>Les projections présentent les anticipations individuelles des membres de la Fed concernant l'évolution des taux directeurs.</p>
+  <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm"
+     target="_blank" rel="noopener noreferrer">
+    Consulter les dernières projections officielles →
+  </a>
+ </div>
+
+</section>
+
+<section id="europe" class="panel">
+ <div class="tag">EUROPEAN UNION</div>
+ <h1>Europe 🇪🇺</h1>
+ <p class="muted">Économie européenne et décisions politiques.</p>
+ <div class="grid">
+  <div class="card"><h3>BCE</h3><p class="muted small">Taux, liquidités et politique monétaire.</p></div>
+  <div class="card"><h3>Inflation</h3><p class="muted small">Prix à la consommation et énergie.</p></div>
+  <div class="card"><h3>Activité</h3><p class="muted small">PMI, PIB et production industrielle.</p></div>
+  <div class="card"><h3>Emploi</h3><p class="muted small">Chômage et marché du travail.</p></div>
+ </div>
+ <div class="card"><h2>Dernières informations européennes</h2><p class="muted">Flux d'actualités à connecter.</p></div>
+</section>
+
+<section id="markets" class="panel">
+ <div class="tag">GLOBAL MARKETS</div>
+ <h1>Marchés financiers 📊</h1>
+ <div class="grid">
+  <div class="card"><h3>Actions US</h3><p class="muted small">S&P 500, Nasdaq, Dow Jones.</p></div>
+  <div class="card"><h3>Actions Europe</h3><p class="muted small">CAC 40, DAX, Euro Stoxx 50.</p></div>
+  <div class="card"><h3>Obligations</h3><p class="muted small">Rendements souverains et crédit.</p></div>
+  <div class="card"><h3>Devises</h3><p class="muted small">Dollar, euro et autres monnaies.</p></div>
+ </div>
+ <div class="card"><h2>Analyse des marchés</h2><p class="muted">Données de marché à connecter.</p></div>
+</section>
+
+<section id="crypto" class="panel">
+ <div class="tag">DIGITAL ASSETS</div>
+ <h1>Bitcoin & cryptomonnaies ₿</h1>
+ <div class="grid">
+  <div class="card"><h3>Bitcoin</h3><p class="muted small">Prix, flux et adoption.</p></div>
+  <div class="card"><h3>Ethereum</h3><p class="muted small">Écosystème et évolution.</p></div>
+  <div class="card"><h3>Altcoins</h3><p class="muted small">Projets et tendances.</p></div>
+  <div class="card"><h3>Réglementation</h3><p class="muted small">Décisions et cadre juridique.</p></div>
+ </div>
+ <div class="card"><h2>Analyse crypto</h2><p class="muted">Actualités et données à connecter.</p></div>
+</section>
+
+<section id="calendar" class="panel">
+ <div class="tag">ECONOMIC CALENDAR</div>
+ <h1>Calendrier économique 📅</h1>
+ <div class="card">
+  <p>Les événements seront ajoutés avec leur date, leur heure de Paris, leur importance et leur source.</p>
+  <div class="item"><b>Inflation américaine (CPI)</b><p class="muted small">Date à renseigner · États-Unis</p></div>
+  <div class="item"><b>Décision de la BCE</b><p class="muted small">Date à renseigner · Europe</p></div>
+  <div class="item"><b>Emploi américain</b><p class="muted small">Date à renseigner · États-Unis</p></div>
+ </div>
+</section>
+
+<section id="analysis" class="panel">
+ <div class="tag">INTELLIGENCE & RESEARCH</div>
+ <h1>Analyses économiques</h1>
+ <div class="card">
+  <h2>Ajouter une analyse personnelle</h2>
+  <label class="small muted">Titre</label>
+  <input id="title" placeholder="Ex : Impact d'une baisse des taux de la Fed">
+  <label class="small muted">Catégorie</label>
+  <select id="category">
+   <option>Macroéconomie</option>
+   <option>Bitcoin & Crypto</option>
+   <option>Actions</option>
+   <option>Or & Argent</option>
+   <option>Géopolitique</option>
+  </select>
+  <label class="small muted">Contenu</label>
+  <textarea id="content" placeholder="Écris ton analyse ici..."></textarea>
+  <button class="action" onclick="addAnalysis()">Enregistrer l'analyse</button>
+  <p class="muted small">Les analyses sont conservées dans le navigateur de cet appareil.</p>
+ </div>
+ <div class="card">
+  <h2>Mes analyses enregistrées</h2>
+  <div id="saved"><p class="muted small">Aucune analyse enregistrée.</p></div>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ GLOBAL ECONOMIC INTELLIGENCE · GEI<br>
+ Veille économique indépendante · US · EUROPE · GLOBAL MARKETS
+</footer>
+
+<script>
+function showPanel(id,button){
+ document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ button.classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function addAnalysis(){
+ const title=document.getElementById('title').value.trim();
+ const category=document.getElementById('category').value;
+ const content=document.getElementById('content').value.trim();
+ if(!title||!content){alert('Ajoute un titre et un contenu.');return;}
+ const entries=JSON.parse(localStorage.getItem('gei_analyses')||'[]');
+ entries.unshift({title,category,content,date:new Date().toLocaleDateString('fr-FR')});
+ localStorage.setItem('gei_analyses',JSON.stringify(entries));
+ document.getElementById('title').value='';
+ document.getElementById('content').value='';
+ renderAnalyses();
+}
+function renderAnalyses(){
+ const entries=JSON.parse(localStorage.getItem('gei_analyses')||'[]');
+ const saved=document.getElementById('saved');
+ if(!entries.length){saved.innerHTML='<p class="muted small">Aucune analyse enregistrée.</p>';return;}
+ saved.innerHTML='';
+ entries.forEach(entry=>{
+  const div=document.createElement('div');
+  div.className='item';
+  const h=document.createElement('b');h.textContent=entry.title;
+  const meta=document.createElement('p');meta.className='muted small';meta.textContent=entry.category+' · '+entry.date;
+  const body=document.createElement('p');body.textContent=entry.content;
+  div.append(h,meta,body);saved.appendChild(div);
+ });
+}
+renderAnalyses();
+  
+async function loadNews() {
+  const status = document.getElementById("news-status");
+  const list = document.getElementById("news-list");
+
+  try {
+    const response = await fetch("news.json?t=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Actualités indisponibles");
+    }
+
+    const data = await response.json();
+
+    list.innerHTML = "";
+
+    if (!data.articles || data.articles.length === 0) {
+      status.textContent = "Aucune actualité disponible pour le moment.";
+      return;
+    }
+
+    status.textContent =
+      data.count + " publications · Mise à jour : " +
+      new Date(data.updated).toLocaleString("fr-FR");
+
+    data.articles.forEach(article => {
+      const item = document.createElement("div");
+      item.className = "item";
+
+      const title = document.createElement("a");
+      title.href = article.url;
+      title.target = "_blank";
+      title.rel = "noopener noreferrer";
+      title.textContent = article.title;
+      title.style.color = "#76aaff";
+      title.style.fontWeight = "bold";
+      title.style.textDecoration = "none";
+
+      const meta = document.createElement("p");
+      meta.className = "muted small";
+      meta.textContent =
+        article.source + " · " + article.region +
+        (article.date ? " · " + article.date : "");
+
+      item.append(title, meta);
+      list.appendChild(item);
+    });
+
+  } catch (error) {
+    status.textContent =
+      "Impossible de charger les actualités. Vérifie la prochaine mise à jour.";
+  }
+}
+
+loadNews();
+
+async function loadUSData() {
+  try {
+    const response = await fetch("us_data.json?t=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Données indisponibles");
+    }
+
+    const data = await response.json();
+    const indicators = data.indicators;
+
+    function display(id, indicator, suffix = "%") {
+      const valueElement = document.getElementById(id);
+      const dateElement = document.getElementById(id + "-date");
+
+      if (!valueElement) return;
+
+      if (indicator && indicator.value !== null) {
+        valueElement.textContent = indicator.value.toLocaleString(
+          "fr-FR"
+        ) + suffix;
+
+        dateElement.textContent =
+          "Donnée annuelle · " + indicator.date;
+      } else {
+        valueElement.textContent = "Indisponible";
+        if (dateElement) dateElement.textContent = "";
+      }
+    }
+
+    display(
+      "us-inflation",
+      indicators.inflation
+    );
+
+    display(
+      "us-unemployment",
+      indicators.unemployment
+    );
+
+    display(
+      "us-gdp",
+      indicators.gdp
+    );
+
+  } catch (error) {
+    console.error("Erreur données USA :", error);
+
+    ["us-inflation", "us-unemployment", "us-gdp"].forEach(id => {
+      const element = document.getElementById(id);
+      if (element) element.textContent = "Indisponible";
+    });
+  }
+}
+
+loadUSData();
+async function loadUSForecasts() {
+  try {
+    const response = await fetch("us_data.json?t=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Données indisponibles");
+    }
+
+    const data = await response.json();
+    const forecasts = data.forecasts;
+
+    if (forecasts.inflation) {
+      document.getElementById("us-forecast-cpi").textContent =
+        forecasts.inflation.cpi.toLocaleString("fr-FR") + "%";
+
+      document.getElementById("us-forecast-core-cpi").textContent =
+        forecasts.inflation.core_cpi.toLocaleString("fr-FR") + "%";
+      
+    document.getElementById("us-forecast-pce").textContent =
+  forecasts.inflation.pce.toLocaleString("fr-FR") + "%";
+
+document.getElementById("us-forecast-core-pce").textContent =
+  forecasts.inflation.core_pce.toLocaleString("fr-FR") + "%";
+
+document.getElementById("us-forecast-pce-date").textContent =
+  forecasts.inflation.month + " · Fed de Cleveland";
+
+document.getElementById("us-forecast-core-pce-date").textContent =
+  forecasts.inflation.month + " · Fed de Cleveland";
+
+      document.getElementById("us-forecast-cpi-date").textContent =
+        forecasts.inflation.month + " · Fed de Cleveland";
+    }
+
+    if (forecasts.gdp) {
+      document.getElementById("us-forecast-gdp").textContent =
+        forecasts.gdp.value.toLocaleString("fr-FR") + "%";
+
+      document.getElementById("us-forecast-gdp-date").textContent =
+        forecasts.gdp.quarter + " · " + forecasts.gdp.date;
+    }
+
+  } catch (error) {
+    console.error("Erreur prévisions USA :", error);
+  }
+}
+
+loadUSForecasts();
+  async function loadFOMC() {
+    function updateFOMCCountdown() {
+  const target = new Date("2026-12-09T20:00:00+01:00");
+  const now = new Date();
+  const countdown = document.getElementById("us-fomc-countdown");
+
+  if (!countdown) return;
+
+  const difference = target - now;
+
+  if (difference <= 0) {
+    countdown.textContent = "La décision de la Fed est attendue aujourd'hui ou a déjà été publiée.";
+    return;
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+
+  countdown.textContent =
+    "Compte à rebours : " + days + " jours, " +
+    hours + " heures et " + minutes + " minutes";
+}
+
+updateFOMCCountdown();
+setInterval(updateFOMCCountdown, 60000);
+  try {
+    const response = await fetch("us_data.json?t=" + Date.now());
+    if (!response.ok) throw new Error("Données indisponibles");
+
+    const data = await response.json();
+    const meeting = data.next_fomc;
+
+    const dates = document.getElementById("us-fomc-dates");
+    const decision = document.getElementById("us-fomc-decision");
+
+    if (meeting) {
+      dates.textContent =
+        "Du " + new Date(meeting.start + "T12:00:00").toLocaleDateString("fr-FR") +
+        " au " + new Date(meeting.end + "T12:00:00").toLocaleDateString("fr-FR");
+
+      decision.textContent = meeting.decision_expected
+        ? "Décision sur les taux attendue le " +
+          new Date(meeting.decision_date + "T12:00:00").toLocaleDateString("fr-FR")
+        : "Aucune décision sur les taux prévue pour cette réunion.";
+    } else {
+      dates.textContent = "Aucune réunion à venir trouvée.";
+      decision.textContent = "";
+    }
+  } catch (error) {
+    console.error("Erreur calendrier FOMC :", error);
+    document.getElementById("us-fomc-dates").textContent = "Indisponible";
+  }
+}
+
+loadFOMC();
+console.log("Test FOMC :", document.getElementById("us-fomc-dates"));
+</script>
+</body>
+</html>
+
