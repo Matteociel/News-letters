@@ -1189,6 +1189,62 @@ async function loadNews() {
 }
 
 loadNews();
+  
+async function loadUSNews() {
+  const list = document.getElementById("usa-news");
+
+  if (!list) return;
+
+  try {
+    const response = await fetch("news.json?t=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Actualités indisponibles");
+    }
+
+    const data = await response.json();
+
+    const articles = (data.articles || [])
+      .filter(article => article.region === "États-Unis");
+
+    list.innerHTML = "";
+
+    if (articles.length === 0) {
+      list.textContent = "Aucune actualité américaine disponible.";
+      return;
+    }
+
+    articles.slice(0, 10).forEach(article => {
+      const item = document.createElement("div");
+      item.className = "item";
+
+      const title = document.createElement("a");
+      title.href = article.url;
+      title.target = "_blank";
+      title.rel = "noopener noreferrer";
+      title.textContent = article.title;
+      title.style.color = "#76aaff";
+      title.style.fontWeight = "bold";
+      title.style.textDecoration = "none";
+
+      const meta = document.createElement("p");
+      meta.className = "muted small";
+      meta.textContent =
+        article.source +
+        (article.date ? " · " + article.date : "");
+
+      item.append(title, meta);
+      list.appendChild(item);
+    });
+
+  } catch (error) {
+    console.error("Erreur actualités américaines :", error);
+    list.textContent = "Impossible de charger les actualités américaines.";
+  }
+}
+
+loadUSNews();
+
 
 async function loadUSData() {
   try {
