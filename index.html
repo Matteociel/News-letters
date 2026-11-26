@@ -71,6 +71,7 @@ header {
   font-weight: 600;
 }
 
+
 nav {
   display: flex;
   gap: 9px;
@@ -82,14 +83,29 @@ nav {
 
 nav button {
   background: transparent;
-  color: var(--muted);
+  color: #a9bad0;
   border: 1px solid transparent;
-  padding: 10px 15px;
+  padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 13px;
-  transition: 0.2s ease;
+  font-weight: 600;
+  transition: all 0.22s ease;
 }
+
+nav button:hover {
+  background: rgba(96, 165, 250, 0.12);
+  color: #93c5fd;
+  border-color: rgba(96, 165, 250, 0.25);
+}
+
+nav button.active {
+  background: #294b68;
+  color: #dbeafe;
+  border-color: #52799e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
 
 nav button.active,
 nav button:hover {
