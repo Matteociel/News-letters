@@ -1,4 +1,4 @@
-
+function displayMarket(name, elementId, statusId, decimals, suffix = "") {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1504,6 +1504,8 @@ displayMarket("nasdaq", "market-nasdaq", "market-nasdaq-status", 2, " pts");
 displayMarket("cac40", "market-cac40", "market-cac40-status", 2, " pts");
 displayMarket("oil", "market-oil", "market-oil-status", 2, " $");
 displayMarket("silver", "market-silver", "market-silver-status", 2, " $");
+displayMarket("bitcoin", "crypto-btc", "crypto-btc-status", 2, " $");
+displayMarket("ethereum", "crypto-eth", "crypto-eth-status", 2, " $");
 
   } catch (error) {
     console.error("Erreur cotations GEI :", error);
