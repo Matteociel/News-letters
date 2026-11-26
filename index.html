@@ -482,6 +482,11 @@ async function loadUSForecasts() {
 
       document.getElementById("us-forecast-core-cpi").textContent =
         forecasts.inflation.core_cpi.toLocaleString("fr-FR") + "%";
+      document.getElementById("us-forecast-pce").textContent =
+  forecasts.inflation.pce.toLocaleString("fr-FR") + "%";
+
+document.getElementById("us-forecast-core-pce").textContent =
+  forecasts.inflation.core_pce.toLocaleString("fr-FR") + "%";
 
       document.getElementById("us-forecast-cpi-date").textContent =
         forecasts.inflation.month + " · Fed de Cleveland";
