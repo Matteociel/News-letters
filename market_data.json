@@ -1,9 +1,9 @@
 {
-  "updated": "2026-11-26T18:34:10.083286+00:00",
+  "updated": "2026-11-26T20:31:53.875560+00:00",
   "source": "Yahoo Finance",
   "markets": {
     "bitcoin": {
-      "value": 60563.97,
+      "value": 60639.55,
       "status": "ok",
       "symbol": "BTC-USD"
     },
@@ -12,13 +12,33 @@
       "status": "ok",
       "symbol": "^GSPC"
     },
+    "nasdaq": {
+      "value": 23585.803,
+      "status": "ok",
+      "symbol": "^IXIC"
+    },
+    "cac40": {
+      "value": 8108.74,
+      "status": "ok",
+      "symbol": "^FCHI"
+    },
     "gold": {
-      "value": 3594.1,
+      "value": 3593.4,
       "status": "ok",
       "symbol": "GC=F"
     },
+    "silver": {
+      "value": 41.75,
+      "status": "ok",
+      "symbol": "SI=F"
+    },
+    "oil": {
+      "value": 84.91,
+      "status": "ok",
+      "symbol": "CL=F"
+    },
     "eurusd": {
-      "value": 1.0973,
+      "value": 1.0975,
       "status": "ok",
       "symbol": "EURUSD=X"
     }
