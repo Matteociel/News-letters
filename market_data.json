@@ -1,22 +1,46 @@
 {
-  "updated": "2026-11-26T21:38:56.854565+00:00",
+  "updated": "2026-11-26T21:43:58.592019+00:00",
   "source": "Yahoo Finance",
   "markets": {
     "bitcoin": {
-      "value": 60807.23,
+      "value": 60822.6,
       "previous_close": 60378.57,
-      "change": 428.66,
-      "change_percent": 0.71,
+      "change": 444.03,
+      "change_percent": 0.74,
       "status": "ok",
       "symbol": "BTC-USD"
     },
     "ethereum": {
-      "value": 1705.18,
+      "value": 1705.78,
       "previous_close": 1690.7516,
-      "change": 14.4284,
-      "change_percent": 0.85,
+      "change": 15.0284,
+      "change_percent": 0.89,
       "status": "ok",
       "symbol": "ETH-USD"
+    },
+    "solana": {
+      "value": 71.62,
+      "previous_close": 70.3932,
+      "change": 1.2268,
+      "change_percent": 1.74,
+      "status": "ok",
+      "symbol": "SOL-USD"
+    },
+    "chainlink": {
+      "value": 9.369,
+      "previous_close": 9.0476,
+      "change": 0.3214,
+      "change_percent": 3.55,
+      "status": "ok",
+      "symbol": "LINK-USD"
+    },
+    "bittensor": {
+      "value": null,
+      "previous_close": null,
+      "change": null,
+      "change_percent": null,
+      "status": "error",
+      "message": "HTTP Error 404: Not Found"
     },
     "sp500": {
       "value": 7182.78,
