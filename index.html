@@ -208,6 +208,7 @@ border-top:1px solid var(--line);font-size:11px}
   <p class="muted small">Calendrier officiel de la Federal Reserve</p>
   <h3 id="us-fomc-dates">Chargement...</h3>
   <p id="us-fomc-decision" class="muted small"></p>
+     <p id="us-fomc-countdown" class="muted small">Calcul du compte à rebours...</p>
   <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
      target="_blank" rel="noopener noreferrer">
     Consulter le calendrier officiel →
@@ -480,6 +481,31 @@ async function loadUSForecasts() {
 
 loadUSForecasts();
   async function loadFOMC() {
+    function updateFOMCCountdown() {
+  const target = new Date("2026-12-09T20:00:00+01:00");
+  const now = new Date();
+  const countdown = document.getElementById("us-fomc-countdown");
+
+  if (!countdown) return;
+
+  const difference = target - now;
+
+  if (difference <= 0) {
+    countdown.textContent = "La décision de la Fed est attendue aujourd'hui ou a déjà été publiée.";
+    return;
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+
+  countdown.textContent =
+    "Compte à rebours : " + days + " jours, " +
+    hours + " heures et " + minutes + " minutes";
+}
+
+updateFOMCCountdown();
+setInterval(updateFOMCCountdown, 60000);
   try {
     const response = await fetch("us_data.json?t=" + Date.now());
     if (!response.ok) throw new Error("Données indisponibles");
