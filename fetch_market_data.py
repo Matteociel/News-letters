@@ -5,6 +5,7 @@ import urllib.parse
 from datetime import datetime, timezone
 
 # Sources de données Yahoo Finance
+
 MARKETS = {
     "bitcoin": "BTC-USD",
     "sp500": "^GSPC",
@@ -14,7 +15,6 @@ MARKETS = {
     "silver": "SI=F",
     "oil": "CL=F",
     "eurusd": "EURUSD=X"
-}
 }
 
 def get_price(symbol):
