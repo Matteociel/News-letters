@@ -1,44 +1,68 @@
 {
-  "updated": "2026-11-26T20:31:53.875560+00:00",
+  "updated": "2026-11-26T20:52:24.032174+00:00",
   "source": "Yahoo Finance",
   "markets": {
     "bitcoin": {
-      "value": 60639.55,
+      "value": 60695.2,
+      "previous_close": 60378.57,
+      "change": 316.63,
+      "change_percent": 0.52,
       "status": "ok",
       "symbol": "BTC-USD"
     },
     "sp500": {
       "value": 7182.78,
+      "previous_close": 7201.09,
+      "change": -18.31,
+      "change_percent": -0.25,
       "status": "ok",
       "symbol": "^GSPC"
     },
     "nasdaq": {
       "value": 23585.803,
+      "previous_close": 23733.535,
+      "change": -147.732,
+      "change_percent": -0.62,
       "status": "ok",
       "symbol": "^IXIC"
     },
     "cac40": {
       "value": 8108.74,
+      "previous_close": 7980.57,
+      "change": 128.17,
+      "change_percent": 1.61,
       "status": "ok",
       "symbol": "^FCHI"
     },
     "gold": {
       "value": 3593.4,
+      "previous_close": 3564.6,
+      "change": 28.8,
+      "change_percent": 0.81,
       "status": "ok",
       "symbol": "GC=F"
     },
     "silver": {
       "value": 41.75,
+      "previous_close": 40.538,
+      "change": 1.212,
+      "change_percent": 2.99,
       "status": "ok",
       "symbol": "SI=F"
     },
     "oil": {
       "value": 84.91,
+      "previous_close": 83.68,
+      "change": 1.23,
+      "change_percent": 1.47,
       "status": "ok",
       "symbol": "CL=F"
     },
     "eurusd": {
-      "value": 1.0975,
+      "value": 1.0973,
+      "previous_close": 1.0982,
+      "change": -0.0009,
+      "change_percent": -0.08,
       "status": "ok",
       "symbol": "EURUSD=X"
     }
