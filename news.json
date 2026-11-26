@@ -1,7 +1,15 @@
 {
-  "updated": "2026-11-26T06:56:06.028244+00:00",
+  "updated": "2026-11-26T17:46:44.787539+00:00",
   "count": 35,
   "articles": [
+    {
+      "title": "Meeting of 28-29 October 2026",
+      "url": "https://www.ecb.europa.eu//press/accounts/2026/html/ecb.mg261126~ccf28c8071.en.html",
+      "source": "Banque centrale européenne",
+      "region": "Europe",
+      "date": "2026-11-26T13:30:00+01:00",
+      "image": "https://www.ecb.europa.eu/press/accounts/shared/img/socialmedia/social-default.jpg?1b07e3d68efd7f29f4771d75b50bd667"
+    },
     {
       "title": "Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125b.htm",
@@ -209,14 +217,6 @@
       "region": "États-Unis",
       "date": "2026-11-09T21:00:00+00:00",
       "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
-    },
-    {
-      "title": "Christine Lagarde: Interview with Yomiuri Shimbun",
-      "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html",
-      "source": "Banque centrale européenne",
-      "region": "Europe",
-      "date": "2026-11-07T15:00:00+01:00",
-      "image": "https://www.ecb.europa.eu/press/inter/shared/img/socialmedia/social-default.jpg?58a9573de993c82d3c9e0b84d422b52a"
     },
     {
       "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
