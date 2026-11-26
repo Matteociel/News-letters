@@ -1,0 +1,26 @@
+{
+  "updated": "2026-11-26T18:34:10.083286+00:00",
+  "source": "Yahoo Finance",
+  "markets": {
+    "bitcoin": {
+      "value": 60563.97,
+      "status": "ok",
+      "symbol": "BTC-USD"
+    },
+    "sp500": {
+      "value": 7182.78,
+      "status": "ok",
+      "symbol": "^GSPC"
+    },
+    "gold": {
+      "value": 3594.1,
+      "status": "ok",
+      "symbol": "GC=F"
+    },
+    "eurusd": {
+      "value": 1.0973,
+      "status": "ok",
+      "symbol": "EURUSD=X"
+    }
+  }
+}
