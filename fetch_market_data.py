@@ -8,8 +8,13 @@ from datetime import datetime, timezone
 MARKETS = {
     "bitcoin": "BTC-USD",
     "sp500": "^GSPC",
+    "nasdaq": "^IXIC",
+    "cac40": "^FCHI",
     "gold": "GC=F",
+    "silver": "SI=F",
+    "oil": "CL=F",
     "eurusd": "EURUSD=X"
+}
 }
 
 def get_price(symbol):
