@@ -242,12 +242,20 @@ a:hover {
   margin: 25px 0;
 }
 
+
 .edition {
-  background: var(--panel);
+  background: linear-gradient(145deg, #1b2b42, #172438);
   border: 1px solid var(--line);
   border-left: 4px solid var(--blue);
-  padding: 23px;
-  border-radius: 12px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.edition:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 .edition:nth-child(2) {
@@ -255,11 +263,13 @@ a:hover {
 }
 
 .time {
-  font-size: 34px;
+  font-size: 36px;
   color: var(--blue);
-  font-weight: bold;
-  margin: 10px 0;
+  font-weight: 800;
+  margin: 12px 0;
+  letter-spacing: -1px;
 }
+
 
 .edition:nth-child(2) .time {
   color: var(--green);
