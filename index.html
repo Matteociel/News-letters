@@ -911,13 +911,50 @@ footer {
 </section>
 
 
+
 <section id="analysis" class="panel">
- <div class="tag">INTELLIGENCE & RESEARCH</div>
- <h1>Analyses économiques</h1>
- <div class="card">
-  <h2>Ajouter une analyse personnelle</h2>
-  <label class="small muted">Titre</label>
+
+ <div class="card" style="background:linear-gradient(120deg,#26365a,#30304e);border-color:#62558b;padding:28px;">
+  <div class="tag" style="color:#ad91e8;">GLOBAL ECONOMIC INTELLIGENCE / RESEARCH</div>
+  <h1>Analyses économiques 📈</h1>
+  <p style="color:#d2dfed;margin-bottom:5px;">Comprendre les tendances, anticiper les risques et identifier les opportunités.</p>
+  <p class="small" style="color:#b9b5d5;">Macroéconomie · Marchés · Banques centrales · Crypto · Géopolitique</p>
+ </div>
+
+ <div class="grid">
+  <div class="card">
+   <div class="tag">01 / MACRO</div>
+   <h3>Macroéconomie</h3>
+   <p class="muted small">Inflation, croissance, emploi et dette publique.</p>
+  </div>
+
+  <div class="card">
+   <div class="tag">02 / MARKETS</div>
+   <h3>Marchés financiers</h3>
+   <p class="muted small">Actions, obligations, devises et matières premières.</p>
+  </div>
+
+  <div class="card">
+   <div class="tag">03 / DIGITAL ASSETS</div>
+   <h3>Bitcoin & Crypto</h3>
+   <p class="muted small">Bitcoin, liquidités, adoption et réglementation.</p>
+  </div>
+
+  <div class="card">
+   <div class="tag">04 / GLOBAL RISK</div>
+   <h3>Géopolitique</h3>
+   <p class="muted small">Commerce mondial, conflits et risques économiques.</p>
+  </div>
+ </div>
+
+ <div class="card" style="border-top:3px solid #ad91e8;">
+  <div class="tag" style="color:#ad91e8;">PERSONAL RESEARCH</div>
+  <h2>✍️ Rédiger une nouvelle analyse</h2>
+  <p class="muted small">Construis ta propre bibliothèque de recherches économiques.</p>
+
+  <label class="small muted">Titre de l'analyse</label>
   <input id="title" placeholder="Ex : Impact d'une baisse des taux de la Fed">
+
   <label class="small muted">Catégorie</label>
   <select id="category">
    <option>Macroéconomie</option>
@@ -926,16 +963,25 @@ footer {
    <option>Or & Argent</option>
    <option>Géopolitique</option>
   </select>
-  <label class="small muted">Contenu</label>
-  <textarea id="content" placeholder="Écris ton analyse ici..."></textarea>
-  <button class="action" onclick="addAnalysis()">Enregistrer l'analyse</button>
+
+  <label class="small muted">Contenu de l'analyse</label>
+  <textarea id="content" placeholder="Contexte, données, arguments, scénarios et conclusion..."></textarea>
+
+  <button class="action" onclick="addAnalysis()">＋ Enregistrer l'analyse</button>
+
   <p class="muted small">Les analyses sont conservées dans le navigateur de cet appareil.</p>
  </div>
+
  <div class="card">
-  <h2>Mes analyses enregistrées</h2>
-  <div id="saved"><p class="muted small">Aucune analyse enregistrée.</p></div>
+  <div class="tag" style="color:#55c99a;">MY RESEARCH LIBRARY</div>
+  <h2>📚 Mes analyses enregistrées</h2>
+  <div id="saved">
+   <p class="muted small">Aucune analyse enregistrée.</p>
+  </div>
  </div>
+
 </section>
+
 
 </main>
 
