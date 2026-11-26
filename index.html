@@ -390,45 +390,110 @@ footer {
 
 <main>
 
+
 <section id="dashboard" class="panel active">
- <div class="tag">GLOBAL ECONOMIC INTELLIGENCE / HOME</div>
- <h1>Tableau de bord économique</h1>
- <p class="muted">L'essentiel de l'économie mondiale, deux fois par jour.</p>
+
+ <div class="card" style="background:linear-gradient(120deg,#1d3554,#243d50);border-color:#426080;padding:30px;">
+  <div class="tag">GLOBAL ECONOMIC INTELLIGENCE</div>
+  <h1>Bienvenue sur GEI</h1>
+  <p style="color:#d2dfed;margin-bottom:5px;">
+   Votre centre de veille économique et financière mondiale.
+  </p>
+  <p class="small" style="color:#a9bdd3;">
+   États-Unis · Europe · Marchés mondiaux · Bitcoin & Crypto
+  </p>
+  <div class="pill">● VEILLE ÉCONOMIQUE</div>
+ </div>
 
  <div class="editions">
   <div class="edition">
-   <div class="tag">MORNING BRIEFING</div>
+   <div class="tag">☀ MORNING BRIEFING</div>
    <div class="time">07:00</div>
-   <p class="small muted">Actualités de la nuit, marchés asiatiques et événements à venir.</p>
+   <h3>Le point du matin</h3>
+   <p class="small muted">
+    Actualités de la nuit, marchés asiatiques et événements économiques à venir.
+   </p>
   </div>
+
   <div class="edition">
-   <div class="tag">EVENING BRIEFING</div>
+   <div class="tag">◐ EVENING BRIEFING</div>
    <div class="time">18:00</div>
-   <p class="small muted">Bilan de la journée, marchés américains et nouvelles publications.</p>
+ <h3>Le point du soir</h3>
+   <p class="small muted">
+    Bilan de la journée, marchés américains et nouvelles publications économiques.
+   </p>
   </div>
  </div>
 
+ <div class="tag">GLOBAL MARKETS</div>
  <h2>Indicateurs de marché</h2>
+
  <div class="grid">
-  <div class="card"><div class="tag">BITCOIN</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
-  <div class="card"><div class="tag">S&P 500</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
-  <div class="card"><div class="tag">OR</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
-  <div class="card"><div class="tag">DOLLAR / EURO</div><div class="metric">--</div><div class="small muted">Données à connecter</div></div>
+  <div class="card" style="border-top:3px solid #e9a94f;">
+   <div class="tag" style="color:#e9a94f;">₿ BITCOIN</div>
+   <div class="metric" style="color:#e9a94f;">--</div>
+   <div class="small muted">Prix en dollars</div>
+   <div class="small muted">Données à connecter</div>
+  </div>
+
+  <div class="card" style="border-top:3px solid #70a9f5;">
+   <div class="tag" style="color:#70a9f5;">S&P 500</div>
+   <div class="metric">--</div>
+   <div class="small muted">Indice américain</div>
+   <div class="small muted">Données à connecter</div>
+  </div>
+
+  <div class="card" style="border-top:3px solid #e9bd69;">
+   <div class="tag" style="color:#e9bd69;">OR</div>
+   <div class="metric" style="color:#e9bd69;">--</div>
+   <div class="small muted">Once en dollars</div>
+   <div class="small muted">Données à connecter</div>
+  </div>
+
+  <div class="card" style="border-top:3px solid #55c99a;">
+   <div class="tag" style="color:#55c99a;">EUR / USD</div>
+   <div class="metric" style="color:#55c99a;">--</div>
+   <div class="small muted">Taux de change</div>
+   <div class="small muted">Données à connecter</div>
+  </div>
  </div>
 
  <div class="grid2">
+
   <div class="card">
+   <div class="tag">NEWS & INFORMATION</div>
    <h2>Dernières actualités économiques</h2>
-  <div id="news-status" class="muted small">Chargement des actualités...</div>
-  <div id="news-list"></div>
+   <div id="news-status" class="muted small">
+    Chargement des actualités...
+   </div>
+   <div id="news-list"></div>
   </div>
+
   <div class="card">
+   <div class="tag">UPCOMING EVENTS</div>
    <h2>Agenda économique</h2>
-   <div class="item"><b>Federal Reserve</b><p class="muted small">Décisions de politique monétaire</p></div>
-   <div class="item"><b>Banque centrale européenne</b><p class="muted small">Taux et politique monétaire</p></div>
-   <div class="item"><b>Inflation et emploi</b><p class="muted small">Prochaines publications à renseigner</p></div>
+
+   <div class="item">
+    <span class="pill">USA</span>
+    <h3>Federal Reserve</h3>
+    <p class="muted small">Décisions de politique monétaire</p>
+   </div>
+
+   <div class="item">
+    <span class="pill" style="background:#1d403b;color:#55c99a;">EUROPE</span>
+    <h3>Banque centrale européenne</h3>
+    <p class="muted small">Taux et politique monétaire</p>
+   </div>
+
+   <div class="item">
+    <span class="pill" style="background:#45371f;color:#e9bd69;">MACRO</span>
+    <h3>Inflation et emploi</h3>
+    <p class="muted small">Prochaines publications à renseigner</p>
+   </div>
   </div>
+
  </div>
+
 </section>
 
 <section id="usa" class="panel">
