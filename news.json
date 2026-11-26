@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-26T21:13:17.485565+00:00",
-  "count": 35,
+  "updated": "2026-11-26T21:22:52.405113+00:00",
+  "count": 36,
   "articles": [
     {
       "title": "Meeting of 28-29 October 2026",
@@ -89,6 +89,14 @@
       "region": "États-Unis",
       "date": "2026-11-20T15:00:00+00:00",
       "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
+    },
+    {
+      "title": "Major Economic Indicators Latest Numbers",
+      "url": "https://www.bls.gov/bls/",
+      "source": "Bureau of Labor Statistics",
+      "region": "États-Unis",
+      "date": "2026-11-20T10:03:24-05:00",
+      "image": null
     },
     {
       "title": "Christine Lagarde: Acting in time",

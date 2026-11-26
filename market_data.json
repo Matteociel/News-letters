@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-26T21:13:20.775914+00:00",
+  "updated": "2026-11-26T21:22:54.594637+00:00",
   "source": "Yahoo Finance",
   "markets": {
     "bitcoin": {
-      "value": 60735.36,
+      "value": 60753.04,
       "previous_close": 60378.57,
-      "change": 356.79,
-      "change_percent": 0.59,
+      "change": 374.47,
+      "change_percent": 0.62,
       "status": "ok",
       "symbol": "BTC-USD"
     },
@@ -59,10 +59,10 @@
       "symbol": "CL=F"
     },
     "eurusd": {
-      "value": 1.0972,
+      "value": 1.0973,
       "previous_close": 1.0982,
-      "change": -0.001,
-      "change_percent": -0.09,
+      "change": -0.0009,
+      "change_percent": -0.08,
       "status": "ok",
       "symbol": "EURUSD=X"
     }
