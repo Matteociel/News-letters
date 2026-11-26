@@ -1268,5 +1268,64 @@ setInterval(updateFOMCCountdown, 60000);
 loadFOMC();
 console.log("Test FOMC :", document.getElementById("us-fomc-dates"));
 </script>
+  
+<script>
+async function loadMarketData() {
+  try {
+    const response = await fetch("market_data.json?t=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Fichier de cotations indisponible");
+    }
+
+    const data = await response.json();
+    const markets = data.markets;
+
+    function displayMarket(name, elementId, statusId, decimals) {
+      const element = document.getElementById(elementId);
+      const status = document.getElementById(statusId);
+      const market = markets[name];
+
+      if (!element || !status) return;
+
+      if (market && market.status === "ok" && market.value !== null) {
+        element.textContent = Number(market.value).toLocaleString(
+          "fr-FR",
+          {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals
+          }
+        );
+
+        status.textContent = "Dernière mise à jour : " +
+          new Date(data.updated).toLocaleTimeString("fr-FR", {
+            hour: "2-digit",
+            minute: "2-digit"
+          });
+      } else {
+        element.textContent = "Indisponible";
+        status.textContent = "Cours momentanément indisponible";
+      }
+    }
+
+    displayMarket("bitcoin", "market-btc", "market-btc-status", 2);
+    displayMarket("sp500", "market-sp500", "market-sp500-status", 2);
+    displayMarket("gold", "market-gold", "market-gold-status", 2);
+    displayMarket("eurusd", "market-eurusd", "market-eurusd-status", 4);
+
+  } catch (error) {
+    console.error("Erreur cotations GEI :", error);
+
+    document.querySelectorAll('[id$="-status"]').forEach(element => {
+      if (element.id.startsWith("market-")) {
+        element.textContent = "Données indisponibles";
+      }
+    });
+  }
+}
+
+loadMarketData();
+</script>
+
 </body>
 </html>
