@@ -13,6 +13,17 @@ FEEDS = [
         "source": "Federal Reserve",
         "region": "États-Unis"
     },
+    
+    {
+        "url": "https://www.bls.gov/feed/bls_latest.rss",
+        "source": "Bureau of Labor Statistics",
+        "region": "États-Unis"
+    },
+    {
+        "url": "https://www.bea.gov/news/current-releases/rss.xml",
+        "source": "Bureau of Economic Analysis",
+        "region": "États-Unis"
+    },
     {
         "url": "https://www.ecb.europa.eu/rss/press.html",
         "source": "Banque centrale européenne",
