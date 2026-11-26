@@ -167,6 +167,7 @@ a:hover {
   gap: 17px;
 }
 
+
 .card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -174,12 +175,15 @@ a:hover {
   padding: 21px;
   margin-bottom: 17px;
   box-shadow: 0 5px 18px rgba(0,0,0,0.12);
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.25s ease,
+              transform 0.25s ease,
+              box-shadow 0.25s ease;
 }
 
 .card:hover {
-  border-color: #506b8d;
-  transform: translateY(-2px);
+  border-color: #6386ad;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
 }
 
 .metric {
