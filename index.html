@@ -1281,37 +1281,37 @@ async function loadMarketData() {
     const data = await response.json();
     const markets = data.markets;
 
-    function displayMarket(name, elementId, statusId, decimals) {
-      const element = document.getElementById(elementId);
-      const status = document.getElementById(statusId);
-      const market = markets[name];
+ 
+function displayMarket(name, elementId, statusId, decimals, suffix = "") {
+  const element = document.getElementById(elementId);
+  const status = document.getElementById(statusId);
+  const market = markets[name];
 
-      if (!element || !status) return;
+  if (!element || !status) return;
 
-      if (market && market.status === "ok" && market.value !== null) {
-        element.textContent = Number(market.value).toLocaleString(
-          "fr-FR",
-          {
-            minimumFractionDigits: decimals,
-            maximumFractionDigits: decimals
-          }
-        );
+  if (market && market.status === "ok" && market.value !== null) {
+    element.textContent =
+      Number(market.value).toLocaleString("fr-FR", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      }) + suffix;
 
-        status.textContent = "Dernière mise à jour : " +
-          new Date(data.updated).toLocaleTimeString("fr-FR", {
-            hour: "2-digit",
-            minute: "2-digit"
-          });
-      } else {
-        element.textContent = "Indisponible";
-        status.textContent = "Cours momentanément indisponible";
-      }
-    }
+    status.textContent = "Actualisé le " +
+      new Date(data.updated).toLocaleString("fr-FR", {
+        timeZone: "Europe/Paris",
+        dateStyle: "short",
+        timeStyle: "short"
+      });
+  } else {
+    element.textContent = "Indisponible";
+    status.textContent = "Cours momentanément indisponible";
+  }
+}
 
-    displayMarket("bitcoin", "market-btc", "market-btc-status", 2);
-    displayMarket("sp500", "market-sp500", "market-sp500-status", 2);
-    displayMarket("gold", "market-gold", "market-gold-status", 2);
-    displayMarket("eurusd", "market-eurusd", "market-eurusd-status", 4);
+displayMarket("bitcoin", "market-btc", "market-btc-status", 2, " $");
+displayMarket("sp500", "market-sp500", "market-sp500-status", 2, " pts");
+displayMarket("gold", "market-gold", "market-gold-status", 2, " $");
+displayMarket("eurusd", "market-eurusd", "market-eurusd-status", 4);
 
   } catch (error) {
     console.error("Erreur cotations GEI :", error);
