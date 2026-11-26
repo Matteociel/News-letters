@@ -888,21 +888,23 @@ footer {
 
  <div class="grid">
 
-  <div class="card" style="border-top:3px solid #e9a94f;">
-   <div class="tag" style="color:#e9a94f;">BITCOIN</div>
-   <h3>Bitcoin ₿</h3>
-   <p class="muted small">Prix · Flux institutionnels · Adoption · Halving</p>
-   <div class="metric" style="color:#e9a94f;">--</div>
-   <p class="muted small">Cours à connecter</p>
-  </div>
 
-  <div class="card" style="border-top:3px solid #70a9f5;">
-   <div class="tag">ETHEREUM</div>
-   <h3>Ethereum Ξ</h3>
-   <p class="muted small">Écosystème · DeFi · Staking · ETF</p>
-   <div class="metric">--</div>
-   <p class="muted small">Cours à connecter</p>
-  </div>
+<div class="card" style="border-top:3px solid #e9a94f;">
+  <div class="tag" style="color:#e9a94f;">BITCOIN</div>
+  <h3>Bitcoin ₿</h3>
+  <p class="muted small">Prix · Flux institutionnels · Adoption · Halving</p>
+  <div class="metric" id="crypto-btc">Chargement...</div>
+  <p class="muted small" id="crypto-btc-status">En attente des données</p>
+</div>
+
+<div class="card" style="border-top:3px solid #70a9f5;">
+  <div class="tag">ETHEREUM</div>
+  <h3>Ethereum Ξ</h3>
+  <p class="muted small">Écosystème · DeFi · Staking · ETF</p>
+  <div class="metric" id="crypto-eth">Chargement...</div>
+  <p class="muted small" id="crypto-eth-status">En attente des données</p>
+</div>
+
 
   <div class="card" style="border-top:3px solid #ad91e8;">
    <div class="tag" style="color:#ad91e8;">ALTCOINS</div>
