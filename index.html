@@ -1317,6 +1317,7 @@ async function loadMarketData() {
     const markets = data.markets;
 
  
+
 function displayMarket(name, elementId, statusId, decimals, suffix = "") {
   const element = document.getElementById(elementId);
   const status = document.getElementById(statusId);
@@ -1331,15 +1332,39 @@ function displayMarket(name, elementId, statusId, decimals, suffix = "") {
         maximumFractionDigits: decimals
       }) + suffix;
 
-    status.textContent = "Actualisé le " +
-      new Date(data.updated).toLocaleString("fr-FR", {
-        timeZone: "Europe/Paris",
-        dateStyle: "short",
-        timeStyle: "short"
-      });
+    // Variation quotidienne
+    if (market.change_percent !== null &&
+        market.change_percent !== undefined) {
+
+      const variation = Number(market.change_percent);
+      const signe = variation > 0 ? "+" : "";
+      const fleche = variation > 0 ? "▲" : variation < 0 ? "▼" : "●";
+
+      status.textContent =
+        fleche + " " + signe +
+        variation.toLocaleString("fr-FR", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }) + " % · Actualisé le " +
+        new Date(data.updated).toLocaleString("fr-FR", {
+          timeZone: "Europe/Paris",
+          dateStyle: "short",
+          timeStyle: "short"
+        });
+
+      status.style.color =
+        variation > 0 ? "#22c55e" :
+        variation < 0 ? "#ef4444" : "#94a3b8";
+
+    } else {
+      status.textContent = "Variation indisponible";
+      status.style.color = "#94a3b8";
+    }
+
   } else {
     element.textContent = "Indisponible";
     status.textContent = "Cours momentanément indisponible";
+    status.style.color = "";
   }
 }
 
