@@ -496,110 +496,127 @@ footer {
 
 </section>
 
+
 <section id="usa" class="panel">
- <div class="tag">UNITED STATES</div>
- <h1>États-Unis 🇺🇸</h1>
- <p class="muted">Suivi de la première économie mondiale.</p>
- 
+
+ <div class="card" style="background:linear-gradient(120deg,#1d3554,#243d50);border-color:#426080;padding:28px;">
+  <div class="tag">GLOBAL ECONOMIC INTELLIGENCE / UNITED STATES</div>
+  <h1>États-Unis 🇺🇸</h1>
+  <p style="color:#d2dfed;margin-bottom:5px;">Suivi de la première économie mondiale.</p>
+  <p class="small" style="color:#a9bdd3;">Federal Reserve · Inflation · Emploi · Croissance · Politique monétaire</p>
+ </div>
+
+ <div class="tag">KEY ECONOMIC INDICATORS</div>
+ <h2>Indicateurs économiques</h2>
+
  <div class="grid">
- 
-  <div class="card">
-   <h3>Federal Reserve 🇺🇸</h3>
-   <p class="muted small">Taux effectif des Fed Funds</p>
-   <h2 id="us-fed-rate">Chargement...</h2>
+
+  <div class="card" style="border-top:3px solid #70a9f5;">
+   <div class="tag">FEDERAL RESERVE</div>
+   <h3>Taux des Fed Funds</h3>
+   <p class="muted small">Taux effectif</p>
+   <div class="metric" id="us-fed-rate">Chargement...</div>
    <p class="muted small" id="us-fed-date"></p>
    <div class="item">
     <b>Fourchette cible officielle</b>
     <p id="us-fed-target" class="muted small">En attente des données</p>
    </div>
-   <a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
-      target="_blank" rel="noopener noreferrer">
-      Voir les probabilités CME FedWatch →
-   </a>
+   <a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" target="_blank" rel="noopener noreferrer">Voir CME FedWatch →</a>
   </div>
 
-  <div class="card">
-   <h3>Inflation 🇺🇸</h3>
+  <div class="card" style="border-top:3px solid #e9bd69;">
+   <div class="tag" style="color:#e9bd69;">INFLATION</div>
+   <h3>Indice des prix CPI</h3>
    <p class="muted small">Inflation annuelle</p>
-   <h2 id="us-inflation">Chargement...</h2>
+   <div class="metric" id="us-inflation">Chargement...</div>
    <p class="muted small" id="us-inflation-date"></p>
   </div>
-  <div class="card">
-   <h3>Emploi 🇺🇸</h3>
+
+  <div class="card" style="border-top:3px solid #55c99a;">
+   <div class="tag" style="color:#55c99a;">EMPLOYMENT</div>
+   <h3>Marché de l'emploi</h3>
    <p class="muted small">Taux de chômage</p>
-   <h2 id="us-unemployment">Chargement...</h2>
+   <div class="metric" id="us-unemployment">Chargement...</div>
    <p class="muted small" id="us-unemployment-date"></p>
   </div>
-  <div class="card">
-   <h3>PIB & croissance 🇺🇸</h3>
+
+  <div class="card" style="border-top:3px solid #ad91e8;">
+   <div class="tag" style="color:#ad91e8;">ECONOMIC GROWTH</div>
+   <h3>PIB américain</h3>
    <p class="muted small">Croissance annuelle</p>
-   <h2 id="us-gdp">Chargement...</h2>
+   <div class="metric" id="us-gdp">Chargement...</div>
    <p class="muted small" id="us-gdp-date"></p>
   </div>
+
  </div>
-<div class="card">
+
+ <div class="card">
+  <div class="tag">ECONOMIC OUTLOOK</div>
   <h2>Prévisions économiques américaines 🇺🇸</h2>
-  <p class="muted small">Estimations des banques fédérales américaines</p>
+  <p class="muted small">Estimations et indicateurs avancés des institutions américaines.</p>
 
   <div class="grid">
-    <div class="item">
-      <h3>Inflation CPI</h3>
-      <h2 id="us-forecast-cpi">Chargement...</h2>
-      <p id="us-forecast-cpi-date" class="muted small"></p>
-    </div>
 
-<div class="item">
-  <h3>Inflation PCE</h3>
-  <h2 id="us-forecast-pce">Chargement...</h2>
-  <p id="us-forecast-pce-date" class="muted small"></p>
-</div>
+   <div class="item">
+    <h3>Inflation CPI</h3>
+    <div class="metric" id="us-forecast-cpi">Chargement...</div>
+    <p id="us-forecast-cpi-date" class="muted small"></p>
+   </div>
 
-<div class="item">
-  <h3>Inflation PCE</h3>
-  <h2 id="us-forecast-pce">Chargement...</h2>
-</div>
+   <div class="item">
+    <h3>Core CPI</h3>
+    <div class="metric" id="us-forecast-core-cpi">Chargement...</div>
+   </div>
 
-<div class="item">
-  <h3>Inflation Core PCE</h3>
-  <h2 id="us-forecast-core-pce">Chargement...</h2>
-  <p id="us-forecast-core-pce-date" class="muted small"></p>
-</div>
+   <div class="item">
+    <h3>Inflation PCE</h3>
+    <div class="metric" id="us-forecast-pce">Chargement...</div>
+    <p id="us-forecast-pce-date" class="muted small"></p>
+   </div>
 
-    <div class="item">
-      <h3>PIB - GDPNow</h3>
-      <h2 id="us-forecast-gdp">Chargement...</h2>
-      <p id="us-forecast-gdp-date" class="muted small"></p>
-    </div>
+   <div class="item">
+    <h3>Core PCE</h3>
+    <div class="metric" id="us-forecast-core-pce">Chargement...</div>
+    <p id="us-forecast-core-pce-date" class="muted small"></p>
+   </div>
 
-    <div class="item">
-      <h3>Prévisions emploi</h3>
-      <p class="muted small">Enquête trimestrielle des économistes</p>
-      <a href="https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/spf"
-         target="_blank">Consulter les prévisions →</a>
-    </div>
+   <div class="item">
+    <h3>PIB — GDPNow</h3>
+    <div class="metric" id="us-forecast-gdp">Chargement...</div>
+    <p id="us-forecast-gdp-date" class="muted small"></p>
+   </div>
+
+   <div class="item">
+    <h3>Prévisions emploi</h3>
+    <p class="muted small">Enquête trimestrielle des économistes</p>
+    <a href="https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/spf" target="_blank" rel="noopener noreferrer">Consulter les prévisions →</a>
+   </div>
+
   </div>
-</div>
- <div class="card"><h2>Dernières informations américaines</h2><p class="muted">Flux d'actualités à connecter.</p></div>
-   <div class="card">
+ </div>
+
+ <div class="card">
+  <div class="tag">NEWS & INFORMATION</div>
+  <h2>Dernières informations américaines</h2>
+  <p class="muted">Flux d'actualités à connecter.</p>
+ </div>
+
+ <div class="card">
+  <div class="tag">MONETARY POLICY</div>
   <h2>Prochaine réunion FOMC 🇺🇸</h2>
   <p class="muted small">Calendrier officiel de la Federal Reserve</p>
   <h3 id="us-fomc-dates">Chargement...</h3>
   <p id="us-fomc-decision" class="muted small"></p>
-     <p id="us-fomc-countdown" class="muted small">Calcul du compte à rebours...</p>
-  <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-     target="_blank" rel="noopener noreferrer">
-    Consulter le calendrier officiel →
-  </a>
+  <p id="us-fomc-countdown" class="muted small">Calcul du compte à rebours...</p>
+  <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank" rel="noopener noreferrer">Consulter le calendrier officiel →</a>
  </div>
 
  <div class="card">
-  <h2>Projections officielles de la Fed 🇺🇸</h2>
-  <p class="muted small">Dot Plot — projections des membres du FOMC</p>
-  <p>Les projections présentent les anticipations individuelles des membres de la Fed concernant l'évolution des taux directeurs.</p>
-  <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm"
-     target="_blank" rel="noopener noreferrer">
-    Consulter les dernières projections officielles →
-  </a>
+  <div class="tag">FEDERAL RESERVE PROJECTIONS</div>
+  <h2>Projections officielles de la Fed</h2>
+  <h3>Dot Plot</h3>
+  <p class="muted">Les projections présentent les anticipations individuelles des membres de la Fed concernant l'évolution des taux directeurs.</p>
+  <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm" target="_blank" rel="noopener noreferrer">Consulter les projections officielles →</a>
  </div>
 
 </section>
