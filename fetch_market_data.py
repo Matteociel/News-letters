@@ -12,7 +12,7 @@ MARKETS = {
     "ethereum": "ETH-USD",
     "solana": "SOL-USD",
 "chainlink": "LINK-USD",
-"bittensor": "TAO-USD",
+"bittensor": "TAO22974-USD",
     "sp500": "^GSPC",
     "nasdaq": "^IXIC",
     "cac40": "^FCHI",
