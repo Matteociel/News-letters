@@ -1,5 +1,5 @@
 
-name: GEI - Actualisation des actualités
+name: GEI - Actualisation des actualités et marchés
 
 on:
   schedule:
@@ -30,11 +30,15 @@ jobs:
         timeout-minutes: 2
         run: timeout 90s python fetch_economic_data.py
 
-      - name: Enregistrer les actualites
+      - name: Recuperer les cours des marches
+        run: python fetch_market_data.py
+
+      - name: Enregistrer les donnees
         run: |
           git config user.name "GEI Bot"
           git config user.email "gei-bot@users.noreply.github.com"
           git add news.json
           if [ -f us_data.json ]; then git add us_data.json; fi
-          git diff --cached --quiet || git commit -m "Actualisation des actualites GEI"
+          if [ -f market_data.json ]; then git add market_data.json; fi
+          git diff --cached --quiet || git commit -m "Actualisation des donnees GEI"
           git push
