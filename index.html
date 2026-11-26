@@ -803,6 +803,27 @@ async function loadUSData() {
 
     const data = await response.json();
     const indicators = data.indicators;
+    
+    // Affichage du taux directeur de la Fed
+    const fed = data.fed;
+
+    const fedRate = document.getElementById("us-fed-rate");
+    const fedDate = document.getElementById("us-fed-date");
+    const fedTarget = document.getElementById("us-fed-target");
+
+    if (fed && fed.value !== null) {
+      fedRate.textContent = fed.value.toLocaleString("fr-FR") + "%";
+      fedDate.textContent = "Dernière donnée : " + fed.date;
+
+      fedTarget.textContent =
+        fed.target_min.toLocaleString("fr-FR") + "% – " +
+        fed.target_max.toLocaleString("fr-FR") + "%";
+    } else {
+      fedRate.textContent = "Indisponible";
+      fedDate.textContent = "";
+      fedTarget.textContent = "Données indisponibles";
+    }
+
 
     function display(id, indicator, suffix = "%") {
       const valueElement = document.getElementById(id);
