@@ -6,8 +6,10 @@ from datetime import datetime, timezone
 
 # Sources de données Yahoo Finance
 
+
 MARKETS = {
     "bitcoin": "BTC-USD",
+    "ethereum": "ETH-USD",
     "sp500": "^GSPC",
     "nasdaq": "^IXIC",
     "cac40": "^FCHI",
@@ -16,6 +18,7 @@ MARKETS = {
     "oil": "CL=F",
     "eurusd": "EURUSD=X"
 }
+
 
 
 def get_market_data(symbol):
