@@ -1,44 +1,44 @@
 {
-  "updated": "2026-11-26T21:45:42.902592+00:00",
+  "updated": "2026-11-27T06:58:06.549457+00:00",
   "source": "Yahoo Finance",
   "markets": {
     "bitcoin": {
-      "value": 60818.81,
-      "previous_close": 60378.57,
-      "change": 440.24,
-      "change_percent": 0.73,
+      "value": 61624.06,
+      "previous_close": 60495.95,
+      "change": 1128.11,
+      "change_percent": 1.86,
       "status": "ok",
       "symbol": "BTC-USD"
     },
     "ethereum": {
-      "value": 1705.91,
-      "previous_close": 1690.7516,
-      "change": 15.1584,
-      "change_percent": 0.9,
+      "value": 1732.5,
+      "previous_close": 1687.7498,
+      "change": 44.7502,
+      "change_percent": 2.65,
       "status": "ok",
       "symbol": "ETH-USD"
     },
     "solana": {
-      "value": 71.62,
-      "previous_close": 70.3932,
-      "change": 1.2268,
-      "change_percent": 1.74,
+      "value": 72.96,
+      "previous_close": 70.9306,
+      "change": 2.0294,
+      "change_percent": 2.86,
       "status": "ok",
       "symbol": "SOL-USD"
     },
     "chainlink": {
-      "value": 9.386,
-      "previous_close": 9.0476,
-      "change": 0.3384,
-      "change_percent": 3.74,
+      "value": 9.578,
+      "previous_close": 9.2701,
+      "change": 0.3079,
+      "change_percent": 3.32,
       "status": "ok",
       "symbol": "LINK-USD"
     },
     "bittensor": {
-      "value": 185.57,
-      "previous_close": 181.7646,
-      "change": 3.8054,
-      "change_percent": 2.09,
+      "value": 188.19,
+      "previous_close": 183.6763,
+      "change": 4.5137,
+      "change_percent": 2.46,
       "status": "ok",
       "symbol": "TAO22974-USD"
     },
@@ -67,34 +67,34 @@
       "symbol": "^FCHI"
     },
     "gold": {
-      "value": 3593.4,
+      "value": 3678.1,
       "previous_close": 3564.6,
-      "change": 28.8,
-      "change_percent": 0.81,
+      "change": 113.5,
+      "change_percent": 3.18,
       "status": "ok",
       "symbol": "GC=F"
     },
     "silver": {
-      "value": 41.75,
+      "value": 44.41,
       "previous_close": 40.538,
-      "change": 1.212,
-      "change_percent": 2.99,
+      "change": 3.872,
+      "change_percent": 9.55,
       "status": "ok",
       "symbol": "SI=F"
     },
     "oil": {
-      "value": 84.91,
+      "value": 86.06,
       "previous_close": 83.68,
-      "change": 1.23,
-      "change_percent": 1.47,
+      "change": 2.38,
+      "change_percent": 2.84,
       "status": "ok",
       "symbol": "CL=F"
     },
     "eurusd": {
-      "value": 1.0972,
-      "previous_close": 1.0982,
-      "change": -0.001,
-      "change_percent": -0.09,
+      "value": 1.0981,
+      "previous_close": 1.0975,
+      "change": 0.0006,
+      "change_percent": 0.05,
       "status": "ok",
       "symbol": "EURUSD=X"
     }
