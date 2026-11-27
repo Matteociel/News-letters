@@ -1,9 +1,9 @@
 {
-  "updated": "2026-11-27T06:58:04.295850+00:00",
+  "updated": "2026-11-27T17:45:37.141596+00:00",
   "source": "Banque mondiale et banques fédérales américaines",
   "fed": {
     "value": 3.88,
-    "date": "2026-11-24",
+    "date": "2026-11-25",
     "target_min": 3.75,
     "target_max": 4.0
   },

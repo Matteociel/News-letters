@@ -1,7 +1,23 @@
 {
-  "updated": "2026-11-27T06:58:04.242597+00:00",
+  "updated": "2026-11-27T17:45:37.055893+00:00",
   "count": 36,
   "articles": [
+    {
+      "title": "Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
+      "url": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261127~13ecadc0f2.en.html",
+      "source": "Banque centrale européenne",
+      "region": "Europe",
+      "date": "2026-11-27T15:00:00+01:00",
+      "image": "https://www.ecb.europa.eu/press/govcdec/shared/img/socialmedia/social-default.jpg?1b07e3d68efd7f29f4771d75b50bd667"
+    },
+    {
+      "title": "ECB Consumer Expectations Survey results – October 2026",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261127~2e53af695e.en.html",
+      "source": "Banque centrale européenne",
+      "region": "Europe",
+      "date": "2026-11-27T10:00:00+01:00",
+      "image": "https://www.ecb.europa.eu/press/shared/img/socialmedia/social-default.jpg?0ef1632c35edede913681bb76af694a4"
+    },
     {
       "title": "Meeting of 28-29 October 2026",
       "url": "https://www.ecb.europa.eu//press/accounts/2026/html/ecb.mg261126~ccf28c8071.en.html",
@@ -201,22 +217,6 @@
       "region": "États-Unis",
       "date": "2026-11-12T16:00:00+00:00",
       "image": "https://www.federalreserve.gov/images/social-media/social-default-image-twitter.jpg"
-    },
-    {
-      "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110_1~9725b7aa07.en.html",
-      "source": "Banque centrale européenne",
-      "region": "Europe",
-      "date": "2026-11-10T17:45:00+01:00",
-      "image": "https://www.ecb.europa.eu/press/key/shared/img/socialmedia/social-default.jpg?0dbb2de262f4f1fcaeae410be132177a"
-    },
-    {
-      "title": "Piero Cipollone: Cash and the digital euro: two sides of the same coin",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110~9422461bad.en.html",
-      "source": "Banque centrale européenne",
-      "region": "Europe",
-      "date": "2026-11-10T15:00:00+01:00",
-      "image": "https://www.ecb.europa.eu/press/key/shared/img/socialmedia/social-default.jpg?0dbb2de262f4f1fcaeae410be132177a"
     },
     {
       "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
