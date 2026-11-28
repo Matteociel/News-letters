@@ -1,44 +1,44 @@
 {
-  "updated": "2026-11-28T06:53:54.964820+00:00",
+  "updated": "2026-11-28T17:34:29.381941+00:00",
   "source": "Yahoo Finance",
   "markets": {
     "bitcoin": {
-      "value": 59711.29,
+      "value": 59468.23,
       "previous_close": 59866.066,
-      "change": -154.776,
-      "change_percent": -0.26,
+      "change": -397.836,
+      "change_percent": -0.66,
       "status": "ok",
       "symbol": "BTC-USD"
     },
     "ethereum": {
-      "value": 1656.75,
+      "value": 1649.46,
       "previous_close": 1661.0398,
-      "change": -4.2898,
-      "change_percent": -0.26,
+      "change": -11.5798,
+      "change_percent": -0.7,
       "status": "ok",
       "symbol": "ETH-USD"
     },
     "solana": {
-      "value": 71.32,
+      "value": 70.45,
       "previous_close": 71.5813,
-      "change": -0.2613,
-      "change_percent": -0.37,
+      "change": -1.1313,
+      "change_percent": -1.58,
       "status": "ok",
       "symbol": "SOL-USD"
     },
     "chainlink": {
-      "value": 9.151,
+      "value": 9.146,
       "previous_close": 9.3567,
-      "change": -0.2057,
-      "change_percent": -2.2,
+      "change": -0.2107,
+      "change_percent": -2.25,
       "status": "ok",
       "symbol": "LINK-USD"
     },
     "bittensor": {
-      "value": 184.74,
+      "value": 181.49,
       "previous_close": 186.6636,
-      "change": -1.9236,
-      "change_percent": -1.03,
+      "change": -5.1736,
+      "change_percent": -2.77,
       "status": "ok",
       "symbol": "TAO22974-USD"
     },
